@@ -12,12 +12,31 @@ body {
 }
 
 .app {
-  width: 100%;
   height: 100%;
+  overflow: hidden;
 }
 
 .app img {
   max-width: 100%;
+}
+
+.app .heart-ico {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 90%;
+  z-index: 10;
+  color: #ff3a3a;
+  -webkit-transform: rotate(21deg);
+  transform: rotate(21deg);
+  font-size: 1.4rem;
+  margin-top: -0.25rem;
+}
+
+.app .heart-place {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
 }
 
 .app .swiper-container {
@@ -73,13 +92,6 @@ body {
   font-weight: bold;
 }
 
-.app .outer-container .swiper-slide.home .text .title i {
-  color: #ff3a3a;
-  position: relative;
-  -webkit-transform: rotate(21deg);
-  transform: rotate(21deg);
-}
-
 .app .outer-container .swiper-slide.home .text .date {
   margin: 0.75rem 0;
 }
@@ -112,19 +124,26 @@ body {
 .app .outer-container .swiper-slide.message {
   display: block;
   font-size: 0;
-  padding: 0 1.5rem;
+  padding: 0 1.7rem;
   background-image: url(../img/dot.png);
 }
 
 .app .outer-container .swiper-slide.message .image {
   margin: 2rem 0;
   text-align: center;
+  position: relative;
 }
 
 .app .outer-container .swiper-slide.message .image img {
   width: 14rem;
   border: 1px solid #aaa;
   border-radius: 50%;
+}
+
+.app .outer-container .swiper-slide.message .image .heart-place {
+  position: absolute;
+  left: 70%;
+  top: 5rem;
 }
 
 .app .outer-container .swiper-slide.message .text .greeting {

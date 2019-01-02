@@ -7,6 +7,7 @@
         innerSwiper: {},
         moved: false,
         calculated: false,
+        heart: null,
         dday: {
             dd: 0,
             hh: 0,
@@ -32,6 +33,17 @@
             msec -= this.dday.ss * 1000;
             this.calculated = true;
             this.before = now < dday;
+        },
+        setHeartAnimate: function (time) {
+            var place = $(this.$el).find('.heart-place:eq(' + this.outerSwiper.activeIndex + ')');
+
+            if (place.length) {
+                var pos = place.position();
+                this.heart.stop().show().animate({ top: pos.top, left: pos.left }, time);
+            }
+            else {
+                this.heart.stop().hide();
+            }
         }
     },
     created: function () {
@@ -48,6 +60,12 @@
             var name = (i < 10 ? '0' : '') + i + '.jpg';
             t.pictures.push(name);
         }
+
+        t.heart = $(t.$el).find('.heart-ico');
+
+        setTimeout(function () {
+            t.setHeartAnimate(0);
+        }, 100);
 
         t.$nextTick(function () {
             t.outerSwiper = new Swiper('.outer-container', {
@@ -84,7 +102,7 @@
                         setTimeout(function () {
                             t.innerSwiper.autoplay.start();
                         }, 1000);
-                        
+
                         t.moved = true;
                     }
                     else {
@@ -94,6 +112,8 @@
                 else {
                     t.innerSwiper.autoplay.stop();
                 }
+
+                t.setHeartAnimate(1000);
             });
         });
     }

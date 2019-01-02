@@ -12,6 +12,7 @@
 </head>
 <body>
     <div id="app" class="app" v-cloak>
+        <i class="heart-ico fa fa-heart"></i>
         <div class="outer-container swiper-container" v-bind:data-idx="outerSwiper.activeIndex">
             <div class="swiper-wrapper">
                 <div class="home swiper-slide">
@@ -21,7 +22,7 @@
                     <div class="text">
                         <div class="title">
                             <span>최주안 첫 번째 생일</span>
-                            <i class="fa fa-heart"></i>
+                            <span class="heart-place"></span>
                         </div>
                         <div class="date">2019년 1월 19일 토요일 11시 30분</div>
                         <div class="addr">서울시 은평구 통일로71길 16</div>
@@ -44,9 +45,12 @@
                 <div class="message swiper-slide">
                     <div class="image">
                         <img src="img/greeting.png" />
+                        <span class="heart-place"></span>
                     </div>
                     <div class="text">
-                        <div class="greeting">주안이의 돌 잔치에 초대합니다!</div>
+                        <div class="greeting">
+                            <span>주안이의 돌 잔치에 초대합니다!</span>
+                        </div>
                         <div class="core">
                             <span>오랜 기다림 끝에 <b>새로운 생명</b>을 만났습니다.</span>
                             <span>우리에게 주신 작은 생명을 바라보면서 한없이 감사했습니다.</span>
@@ -103,7 +107,8 @@
             <div class="outer-pagination swiper-pagination"></div>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="js/vue.min.js"></script>
+    <script src="js/jquery-2.2.4.min.js"></script>
     <script src="js/swiper.min.js"></script>
     <script src="js/app.js"></script>
 </body>
