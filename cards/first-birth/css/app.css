@@ -323,6 +323,9 @@ body {
   .app .outer-container .swiper-slide.home .image {
     background-position: 50% 65%;
   }
+  .app .outer-container .swiper-slide.home .text .title {
+    padding: 1rem 0 0.9rem 0;
+  }
   .app .outer-container .swiper-slide.home .text .title > div {
     display: inline-block;
   }
