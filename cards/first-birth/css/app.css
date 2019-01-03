@@ -205,7 +205,7 @@ body {
 }
 
 .app .outer-container .swiper-slide.map .dest .each {
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 .app .outer-container .swiper-slide.map .dest .each label {
