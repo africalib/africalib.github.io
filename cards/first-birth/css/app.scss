@@ -3,9 +3,11 @@
     height: 100%;
 }
 
+html {
+    font-size: 16px;
+}
+
 body {
-    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-size: 14px;
     color: #000;
     margin: 0;
     padding: 0;
@@ -306,6 +308,108 @@ body {
     }
 } 
 
+
+@media (max-width:375px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media (max-width:350px) {
+    html {
+        font-size: 13px;
+    }
+}
+
+@media (orientation: landscape) {
+    html {
+        font-size: 14px;
+    }
+
+    .app {
+        .outer-container {
+            .swiper-slide {
+                &.home {
+                    .image {
+                        background-position: 50% 65%;
+                    }
+
+                    .text {
+                        .title {
+                            > div {
+                                display: inline-block;
+                            }
+                        }
+                    }
+                }
+
+                &.message {
+                    padding-top: 6rem;
+
+                    .image {
+                        padding: 0 1rem;
+                        width: 30%;
+                        margin: 0;
+                        display: inline-block;
+                        vertical-align: top;
+                    }
+
+                    .text {
+                        padding: 0 1rem;
+                        display: inline-block;
+                        vertical-align: top;
+                        width: 70%;
+
+                        .core {
+                            padding: 0;
+                            letter-spacing: 0;
+                        }
+
+                        .from {
+                            padding: 0;
+                        }
+                    }
+                }
+
+                &.map {
+                    .dest {
+                        .each {
+                            width:50%;
+                            display:inline-block;
+                            vertical-align: top;
+
+                            &:nth-child(2){
+                                label {
+                                    margin-top: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .inner-container {
+            .swiper-slide div.image {
+                background-size: auto 100%;
+            }
+        }
+    }
+    
+    @media (max-width:640px) {
+        html {
+            font-size: 13px;
+        }
+    }
+    
+    @media (max-width:568px) {
+        html {
+            font-size: 12px;
+        }
+    }
+}
+
+/*
 @media (max-width:375px) {
     .app .outer-container .swiper-slide{
         &.message {
@@ -383,11 +487,23 @@ body {
                         background-position: 50% 65%;
                     }
 
-                    .text .title {
-                        padding: 1rem 0 0.8rem 0;
+                    .text {
+                        .title {
+                            padding: 0.5rem 0;
+                            font-size: 1.2rem;
 
-                        > div {
-                            display: inline-block;
+                            > div {
+                                display: inline-block;
+                            }
+                        }
+
+                        .date {
+                            margin-bottom: 0.5rem;
+                            padding: 0.3rem 0 0.2rem 0;
+                        }
+
+                        .dday {
+                            margin-top: 0.25rem;
                         }
                     }
                 }
@@ -408,6 +524,15 @@ body {
                         display: inline-block;
                         vertical-align: top;
                         width: 70%;
+
+                        .core {
+                            padding: 0;
+                            letter-spacing: 0;
+                        }
+
+                        .from {
+                            padding: 0;
+                        }
                     }
                 }
 
@@ -459,7 +584,7 @@ body {
         &.home {
             .text {
                 .title {
-                    font-size: 1.2rem;
+                    font-size: 1.0rem;
                 }
     
                 font-size: 0.9rem;
@@ -506,3 +631,4 @@ body {
         }
     }
 }
+    */

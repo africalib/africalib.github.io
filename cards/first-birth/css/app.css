@@ -3,9 +3,11 @@ html, body {
   height: 100%;
 }
 
+html {
+  font-size: 16px;
+}
+
 body {
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-size: 14px;
   color: #000;
   margin: 0;
   padding: 0;
@@ -290,61 +292,29 @@ body {
 }
 
 @media (max-width: 375px) {
-  .app .outer-container .swiper-slide.message .image {
-    margin: 1.5rem 0;
-  }
-  .app .outer-container .swiper-slide.message .image img {
-    width: 13rem;
-  }
-  .app .outer-container .swiper-slide.message .text .greeting {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-  }
-  .app .outer-container .swiper-slide.message .text .core {
-    font-size: 0.9rem;
-  }
-  .app .outer-container .swiper-slide.message .text .from {
-    margin-top: 0.5rem;
+  html {
+    font-size: 14px;
   }
 }
 
 @media (max-width: 350px) {
-  .app .outer-container .swiper-slide.message .image {
-    margin: 1rem 0;
-  }
-  .app .outer-container .swiper-slide.message .image img {
-    width: 10rem;
-  }
-  .app .outer-container .swiper-slide.message .text .greeting {
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
-  }
-  .app .outer-container .swiper-slide.message .text .core {
-    font-size: 0.8rem;
-  }
-  .app .outer-container .swiper-slide.message .text .from {
-    margin-top: 1rem;
-  }
-  .app .outer-container .swiper-slide.map .dest .each {
-    font-size: 0.8rem;
-  }
-  .app .outer-container .swiper-slide.map .dest .each label {
-    margin-top: 0.75rem;
+  html {
+    font-size: 13px;
   }
 }
 
 @media (orientation: landscape) {
+  html {
+    font-size: 14px;
+  }
   .app .outer-container .swiper-slide.home .image {
     background-position: 50% 65%;
-  }
-  .app .outer-container .swiper-slide.home .text .title {
-    padding: 1rem 0 0.8rem 0;
   }
   .app .outer-container .swiper-slide.home .text .title > div {
     display: inline-block;
   }
   .app .outer-container .swiper-slide.message {
-    padding: 3rem 0;
+    padding-top: 6rem;
   }
   .app .outer-container .swiper-slide.message .image {
     padding: 0 1rem;
@@ -359,17 +329,20 @@ body {
     vertical-align: top;
     width: 70%;
   }
+  .app .outer-container .swiper-slide.message .text .core {
+    padding: 0;
+    letter-spacing: 0;
+  }
+  .app .outer-container .swiper-slide.message .text .from {
+    padding: 0;
+  }
   .app .outer-container .swiper-slide.map .dest .each {
     width: 50%;
     display: inline-block;
     vertical-align: top;
-    padding-right: 0.5rem;
   }
-  .app .outer-container .swiper-slide.map .dest .each label {
+  .app .outer-container .swiper-slide.map .dest .each:nth-child(2) label {
     margin-top: 0;
-  }
-  .app .outer-container .swiper-slide.map .dest .each .info {
-    margin-bottom: 0.75rem;
   }
   .app .inner-container .swiper-slide div.image {
     background-size: auto 100%;
@@ -377,48 +350,238 @@ body {
 }
 
 @media (orientation: landscape) and (max-width: 640px) {
-  .app .outer-container .swiper-slide.message {
-    padding: 1rem 0;
-  }
-  .app .outer-container .swiper-slide.message .text .from {
-    margin-top: 0.5rem;
+  html {
+    font-size: 13px;
   }
 }
 
 @media (orientation: landscape) and (max-width: 568px) {
-  .app .outer-container .swiper-slide.home .text {
-    font-size: 0.9rem;
-  }
-  .app .outer-container .swiper-slide.home .text .title {
-    font-size: 1.2rem;
-  }
-  .app .outer-container .swiper-slide.message {
-    padding: 1rem 0;
-  }
-  .app .outer-container .swiper-slide.message .image {
-    margin: 1.5rem 0;
-  }
-  .app .outer-container .swiper-slide.message .image img {
-    width: 13rem;
-  }
-  .app .outer-container .swiper-slide.message .text .greeting {
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-  }
-  .app .outer-container .swiper-slide.message .text .core {
-    font-size: 0.9rem;
-  }
-  .app .outer-container .swiper-slide.message .text .from {
-    margin-top: 0;
-  }
-  .app .outer-container .swiper-slide.map .dest {
-    padding: 1rem 1rem 0 1rem;
-  }
-  .app .outer-container .swiper-slide.map .dest .each {
-    font-size: 0.75rem;
-  }
-  .app .outer-container .swiper-slide.map .dest .each .info {
-    margin-bottom: 0.75rem;
+  html {
+    font-size: 12px;
   }
 }
+
+/*
+@media (max-width:375px) {
+    .app .outer-container .swiper-slide{
+        &.message {
+            .image {
+                margin: 1.5rem 0;
+
+                img {
+                    width: 13rem;
+                }
+            }
+
+            .text {
+                .greeting {
+                    font-size: 1rem;
+                    margin-bottom: 1rem;
+                }
+
+                .core {
+                    font-size: 0.9rem;
+                }
+
+                .from {
+                    margin-top: 0.5rem;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:350px) {
+    .app .outer-container .swiper-slide {
+        &.message {
+            .image {
+                margin: 1rem 0;
+
+                img {
+                    width: 10rem;
+                }
+            }
+
+            .text {
+                .greeting {
+                    font-size: 0.9rem;
+                    margin-bottom: 0.5rem;
+                }
+
+                .core {
+                    font-size: 0.8rem;
+                }
+
+                .from {
+                    margin-top: 1rem;
+                }
+            }
+        }
+
+        &.map .dest {
+            .each {
+                font-size: 0.8rem;
+
+                label {
+                    margin-top: 0.75rem;
+                }
+            }
+        }
+    }
+}
+
+@media (orientation: landscape) {
+    .app {
+        .outer-container {
+            .swiper-slide {
+                &.home {
+                    .image {
+                        background-position: 50% 65%;
+                    }
+
+                    .text {
+                        .title {
+                            padding: 0.5rem 0;
+                            font-size: 1.2rem;
+
+                            > div {
+                                display: inline-block;
+                            }
+                        }
+
+                        .date {
+                            margin-bottom: 0.5rem;
+                            padding: 0.3rem 0 0.2rem 0;
+                        }
+
+                        .dday {
+                            margin-top: 0.25rem;
+                        }
+                    }
+                }
+
+                &.message {
+                    padding: 3rem 0;
+
+                    .image {
+                        padding: 0 1rem;
+                        width: 30%;
+                        margin: 0;
+                        display: inline-block;
+                        vertical-align: top;
+                    }
+
+                    .text {
+                        padding: 0 1rem;
+                        display: inline-block;
+                        vertical-align: top;
+                        width: 70%;
+
+                        .core {
+                            padding: 0;
+                            letter-spacing: 0;
+                        }
+
+                        .from {
+                            padding: 0;
+                        }
+                    }
+                }
+
+                &.map {
+                    .dest {
+                        .each {
+                            width:50%;
+                            display:inline-block;
+                            vertical-align: top;
+                            padding-right: 0.5rem;
+
+                            label {
+                                margin-top: 0;
+                            }
+
+                            .info {
+                                margin-bottom: 0.75rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .inner-container {
+            .swiper-slide div.image {
+                background-size: auto 100%;
+            }
+        }
+    }
+}
+
+@media (orientation: landscape) and (max-width: 640px) {
+    .app .outer-container .swiper-slide {
+        &.message {
+            padding: 1rem 0;
+
+            .text {
+                .from {
+                    margin-top: 0.5rem;
+                }
+            }
+        }
+    }
+}
+
+@media (orientation: landscape) and (max-width: 568px) {
+    .app .outer-container .swiper-slide {
+        &.home {
+            .text {
+                .title {
+                    font-size: 1.0rem;
+                }
+    
+                font-size: 0.9rem;
+            }
+        }
+
+        &.message {
+            padding: 1rem 0;
+            
+            .image {
+                margin: 1.5rem 0;
+
+                img {
+                    width: 13rem;
+                }
+            }
+
+            .text {
+                .greeting {
+                    font-size: 1rem;
+                    margin-bottom: 0.5rem;
+                }
+
+                .core {
+                    font-size: 0.9rem;
+                }
+
+                .from {
+                    margin-top: 0;
+                }
+            }
+        }
+
+        &.map .dest{
+            padding: 1rem 1rem 0 1rem;
+
+            .each{
+                font-size: 0.75rem;
+
+                .info {
+                    margin-bottom: 0.75rem;
+                }
+            }
+        }
+    }
+}
+    */
 /*# sourceMappingURL=app.css.map */
