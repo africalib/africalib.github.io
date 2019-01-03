@@ -14,6 +14,7 @@ body {
 .app {
     height: 100%;
     overflow: hidden;
+    font-family: 'Nanum Square';
 
     img {
         max-width: 100%;
@@ -29,13 +30,14 @@ body {
         -webkit-transform: rotate(21deg);
         transform: rotate(21deg);
         font-size: 1.4rem;
-        margin-top: -0.25rem;
     }
 
     .heart-place {
         display: inline-block;
-        width: 1rem;
-        height: 1rem;
+        width: 1.4rem;
+        height: 1.4rem;
+        position: relative;
+        vertical-align: middle;
     }
 
     .swiper-container {
@@ -66,36 +68,48 @@ body {
         .swiper-slide {
             &.home {
                 display: block;
-                padding-top: 21rem;
-                padding-left: 1.7rem;
-                background-image: url(../img/dot.png);
 
-                .image{
-                    position: absolute;
-                    right: -4rem;
-                    top: -4rem;
+                .image {
+                    height: 50%;
+                    background-image: url(../img/home2.jpg);
+                    background-size: 100% auto;
+                    background-position: 50% 90%;
+                    position: relative;
 
-                    img {
-                        border-radius: 50%;
-                        width: 21rem;
-                        border: 1px solid #aaa;
+                    .heart-place{
+                        top: 15%;
+                        left: 60%;
+                        position: absolute;
                     }
                 }
 
+                .wrap{
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 50%;
+                }
+
                 .text {
-                    text-align: left;
-                    color:#555;
+                    color: #555;
+                    text-align: center;
                     font-size: 1rem;
                     letter-spacing: 0.1rem;
 
                     .title {
                         font-size: 1.4rem;
-                        color:#000;
+                        color: #000;
                         font-weight: bold;
+                        padding: 1.5rem 0 1.3rem 0;
                     }
 
                     .date {
-                        margin:0.75rem 0;
+                        background: #c1926f;
+                        color: #fff;
+                        font-weight: bold;
+                        padding: 0.75rem 0;
+                        margin: 0 auto 1rem 0;
                     }
 
                     .dday {
@@ -127,8 +141,7 @@ body {
             &.message {
                 display: block;
                 font-size: 0;
-                padding: 0 1.7rem;
-                background-image: url(../img/dot.png);
+                padding: 0;
 
                 .image {
                     margin: 2rem 0;
@@ -136,29 +149,34 @@ body {
                     position: relative;
 
                     img { 
-                        width: 14rem;
+                        width: 15rem;
                         border: 1px solid #aaa;
                         border-radius: 50%;
                     }
 
                     .heart-place {
                         position: absolute;
-                        left: 70%;
-                        top: 5rem;
+                        left: 64%;
+                        top: 21%;
                     }
                 }
 
                 .text {
+                    letter-spacing: 0.1rem;
                     .greeting {
-                        font-size: 1.1rem;
+                        font-size: 1rem;
+                        background: #c1926f;
+                        color: #fff;
                         font-weight: bold;
-                        margin-bottom: 1.2rem;
                         text-align: center;
+                        padding: 0.75rem 0;
+                        margin: 0 auto 1rem 0;
                     }
 
                     .core {
                         line-height: 2.1rem;
                         font-size: 1rem;
+                        padding:0 1.7rem;
                     }
 
                     .from {
@@ -166,6 +184,7 @@ body {
                         font-size: 1rem;
                         text-align: right;
                         margin-top: 1.2rem;
+                        padding:0 1.7rem;
                     }
                 }
             }
@@ -235,14 +254,45 @@ body {
     }
 
     .inner-container {
+        .title {
+            position: absolute;
+            left: 0;
+            top: 0;
+            padding: 1.2rem 0;
+            width: 100%;
+            color: #fff;
+            text-align: center;
+            z-index: 5;
+
+            .heart-place {
+                position: relative;
+                left: 0.4rem;
+            }
+        }
+
         .swiper-slide {
             width: 100%;
             background-color: #000;
             padding: 4rem 0;
 
-            img {
-                max-height:100%;
-                width:auto;
+            div.image {
+                height: 100%;
+                width: 100%;
+                background-position: 50% 50%;
+                background-size: 100% auto;
+                background-repeat: no-repeat;
+            }
+
+            &[data-swiper-slide-index='37'] {
+                div.image {
+                    background-position: 50% 0;
+                }
+            }
+
+            &[data-swiper-slide-index='34'], &[data-swiper-slide-index='48'], &[data-swiper-slide-index='49'] {
+                div.image {
+                    background-size: auto 100%;
+                }
             }
         }
 
@@ -258,13 +308,7 @@ body {
 
 @media (max-width:375px) {
     .app .outer-container .swiper-slide{
-        &.home {
-            padding-top:20rem;
-        }
-
         &.message {
-            padding: 0 1rem;
-            
             .image {
                 margin: 1.5rem 0;
 
@@ -284,7 +328,7 @@ body {
                 }
 
                 .from {
-                    margin-top: 1.2rem;
+                    margin-top: 0.5rem;
                 }
             }
         }
@@ -293,13 +337,7 @@ body {
 
 @media (max-width:350px) {
     .app .outer-container .swiper-slide {
-        &.home {
-            padding-top:19rem;
-        }
-
         &.message {
-            padding: 0 1rem;
-
             .image {
                 margin: 1rem 0;
 
@@ -341,7 +379,17 @@ body {
         .outer-container {
             .swiper-slide {
                 &.home {
-                    padding-top: 5rem;
+                    .image {
+                        background-position: 50% 65%;
+                    }
+
+                    .text .title {
+                        padding: 1rem 0 0.8rem 0;
+
+                        > div {
+                            display: inline-block;
+                        }
+                    }
                 }
 
                 &.message {
@@ -385,8 +433,8 @@ body {
         }
 
         .inner-container {
-            .swiper-slide {
-                padding: 0;
+            .swiper-slide div.image {
+                background-size: auto 100%;
             }
         }
     }

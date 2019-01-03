@@ -2,7 +2,7 @@
     el: '#app',
     data: {
         pictures: [],
-        icos: ['fa fa-user-circle', 'fa fa-bullhorn', 'fa fa-camera-retro', 'fa fa-map'],
+        icos: ['fa fa-user-circle', 'fa fa-envelope', 'fa fa-camera-retro', 'fa fa-map'],
         outerSwiper: {},
         innerSwiper: {},
         moved: false,
@@ -38,8 +38,8 @@
             var place = $(this.$el).find('.heart-place:eq(' + this.outerSwiper.activeIndex + ')');
 
             if (place.length) {
-                var pos = place.position();
-                this.heart.stop().show().animate({ top: pos.top, left: pos.left }, time);
+                var offset = place.offset();
+                this.heart.stop().show().animate({ top: offset.top, left: offset.left }, time);
             }
             else {
                 this.heart.stop().hide();
@@ -94,7 +94,7 @@
             t.innerSwiper.slideTo(7, 0);
             t.innerSwiper.autoplay.stop();
 
-            t.outerSwiper.on('slideChange', function () {
+            t.outerSwiper.on('slideChangeTransitionEnd', function () {
                 if (t.outerSwiper.activeIndex === 2) {
                     if (!t.moved) {
                         t.innerSwiper.slideTo(0, 1000);

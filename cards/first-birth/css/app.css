@@ -14,6 +14,7 @@ body {
 .app {
   height: 100%;
   overflow: hidden;
+  font-family: 'Nanum Square';
 }
 
 .app img {
@@ -30,13 +31,14 @@ body {
   -webkit-transform: rotate(21deg);
   transform: rotate(21deg);
   font-size: 1.4rem;
-  margin-top: -0.25rem;
 }
 
 .app .heart-place {
   display: inline-block;
-  width: 1rem;
-  height: 1rem;
+  width: 1.4rem;
+  height: 1.4rem;
+  position: relative;
+  vertical-align: middle;
 }
 
 .app .swiper-container {
@@ -62,26 +64,33 @@ body {
 
 .app .outer-container .swiper-slide.home {
   display: block;
-  padding-top: 21rem;
-  padding-left: 1.7rem;
-  background-image: url(../img/dot.png);
 }
 
 .app .outer-container .swiper-slide.home .image {
-  position: absolute;
-  right: -4rem;
-  top: -4rem;
+  height: 50%;
+  background-image: url(../img/home2.jpg);
+  background-size: 100% auto;
+  background-position: 50% 90%;
+  position: relative;
 }
 
-.app .outer-container .swiper-slide.home .image img {
-  border-radius: 50%;
-  width: 21rem;
-  border: 1px solid #aaa;
+.app .outer-container .swiper-slide.home .image .heart-place {
+  top: 15%;
+  left: 60%;
+  position: absolute;
+}
+
+.app .outer-container .swiper-slide.home .wrap {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 50%;
 }
 
 .app .outer-container .swiper-slide.home .text {
-  text-align: left;
   color: #555;
+  text-align: center;
   font-size: 1rem;
   letter-spacing: 0.1rem;
 }
@@ -90,10 +99,15 @@ body {
   font-size: 1.4rem;
   color: #000;
   font-weight: bold;
+  padding: 1.5rem 0 1.3rem 0;
 }
 
 .app .outer-container .swiper-slide.home .text .date {
-  margin: 0.75rem 0;
+  background: #c1926f;
+  color: #fff;
+  font-weight: bold;
+  padding: 0.75rem 0;
+  margin: 0 auto 1rem 0;
 }
 
 .app .outer-container .swiper-slide.home .text .dday {
@@ -124,8 +138,7 @@ body {
 .app .outer-container .swiper-slide.message {
   display: block;
   font-size: 0;
-  padding: 0 1.7rem;
-  background-image: url(../img/dot.png);
+  padding: 0;
 }
 
 .app .outer-container .swiper-slide.message .image {
@@ -135,27 +148,35 @@ body {
 }
 
 .app .outer-container .swiper-slide.message .image img {
-  width: 14rem;
+  width: 15rem;
   border: 1px solid #aaa;
   border-radius: 50%;
 }
 
 .app .outer-container .swiper-slide.message .image .heart-place {
   position: absolute;
-  left: 70%;
-  top: 5rem;
+  left: 64%;
+  top: 21%;
+}
+
+.app .outer-container .swiper-slide.message .text {
+  letter-spacing: 0.1rem;
 }
 
 .app .outer-container .swiper-slide.message .text .greeting {
-  font-size: 1.1rem;
+  font-size: 1rem;
+  background: #c1926f;
+  color: #fff;
   font-weight: bold;
-  margin-bottom: 1.2rem;
   text-align: center;
+  padding: 0.75rem 0;
+  margin: 0 auto 1rem 0;
 }
 
 .app .outer-container .swiper-slide.message .text .core {
   line-height: 2.1rem;
   font-size: 1rem;
+  padding: 0 1.7rem;
 }
 
 .app .outer-container .swiper-slide.message .text .from {
@@ -163,6 +184,7 @@ body {
   font-size: 1rem;
   text-align: right;
   margin-top: 1.2rem;
+  padding: 0 1.7rem;
 }
 
 .app .outer-container .swiper-slide.map {
@@ -221,15 +243,42 @@ body {
   color: #fff;
 }
 
+.app .inner-container .title {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 1.2rem 0;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  z-index: 5;
+}
+
+.app .inner-container .title .heart-place {
+  position: relative;
+  left: 0.4rem;
+}
+
 .app .inner-container .swiper-slide {
   width: 100%;
   background-color: #000;
   padding: 4rem 0;
 }
 
-.app .inner-container .swiper-slide img {
-  max-height: 100%;
-  width: auto;
+.app .inner-container .swiper-slide div.image {
+  height: 100%;
+  width: 100%;
+  background-position: 50% 50%;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+
+.app .inner-container .swiper-slide[data-swiper-slide-index='37'] div.image {
+  background-position: 50% 0;
+}
+
+.app .inner-container .swiper-slide[data-swiper-slide-index='34'] div.image, .app .inner-container .swiper-slide[data-swiper-slide-index='48'] div.image, .app .inner-container .swiper-slide[data-swiper-slide-index='49'] div.image {
+  background-size: auto 100%;
 }
 
 .app .inner-container .inner-pagination {
@@ -241,12 +290,6 @@ body {
 }
 
 @media (max-width: 375px) {
-  .app .outer-container .swiper-slide.home {
-    padding-top: 20rem;
-  }
-  .app .outer-container .swiper-slide.message {
-    padding: 0 1rem;
-  }
   .app .outer-container .swiper-slide.message .image {
     margin: 1.5rem 0;
   }
@@ -261,17 +304,11 @@ body {
     font-size: 0.9rem;
   }
   .app .outer-container .swiper-slide.message .text .from {
-    margin-top: 1.2rem;
+    margin-top: 0.5rem;
   }
 }
 
 @media (max-width: 350px) {
-  .app .outer-container .swiper-slide.home {
-    padding-top: 19rem;
-  }
-  .app .outer-container .swiper-slide.message {
-    padding: 0 1rem;
-  }
   .app .outer-container .swiper-slide.message .image {
     margin: 1rem 0;
   }
@@ -297,8 +334,14 @@ body {
 }
 
 @media (orientation: landscape) {
-  .app .outer-container .swiper-slide.home {
-    padding-top: 5rem;
+  .app .outer-container .swiper-slide.home .image {
+    background-position: 50% 65%;
+  }
+  .app .outer-container .swiper-slide.home .text .title {
+    padding: 1rem 0 0.8rem 0;
+  }
+  .app .outer-container .swiper-slide.home .text .title > div {
+    display: inline-block;
   }
   .app .outer-container .swiper-slide.message {
     padding: 3rem 0;
@@ -328,8 +371,8 @@ body {
   .app .outer-container .swiper-slide.map .dest .each .info {
     margin-bottom: 0.75rem;
   }
-  .app .inner-container .swiper-slide {
-    padding: 0;
+  .app .inner-container .swiper-slide div.image {
+    background-size: auto 100%;
   }
 }
 
