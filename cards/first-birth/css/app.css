@@ -251,6 +251,7 @@ body {
   top: 0;
   padding: 1.2rem 0;
   width: 100%;
+  font-size: 1rem;
   color: #fff;
   text-align: center;
   z-index: 5;
@@ -291,6 +292,18 @@ body {
   display: none;
 }
 
+@media (min-width: 767px) {
+  html {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  html {
+    font-size: 30px;
+  }
+}
+
 @media (max-width: 375px) {
   html {
     font-size: 14px;
@@ -305,7 +318,7 @@ body {
 
 @media (orientation: landscape) {
   html {
-    font-size: 13px;
+    font-size: 12px;
   }
   .app .outer-container .swiper-slide.home .image {
     background-position: 50% 65%;
@@ -349,15 +362,27 @@ body {
   }
 }
 
+@media (orientation: landscape) and (min-width: 1024px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 1366px) {
+  html {
+    font-size: 24px;
+  }
+}
+
 @media (orientation: landscape) and (max-width: 640px) {
   html {
-    font-size: 12px;
+    font-size: 11px;
   }
 }
 
 @media (orientation: landscape) and (max-width: 568px) {
   html {
-    font-size: 11px;
+    font-size: 10px;
   }
 }
 
