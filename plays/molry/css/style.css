@@ -1,0 +1,344 @@
+﻿html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.btn:active, .btn:focus {
+    outline: 0 !important;
+}
+
+.mole-app {
+    font-size: 0;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+    .mole-app .app-wrapper {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        overflow: auto;
+    }
+
+    .mole-app .dig * {
+        opacity: 0.4;
+        transition: opacity 1s;
+        margin-top: 50%;
+    }
+
+    .mole-app .bang {
+        position: absolute;
+        left: 0;
+        right: 0;
+        width: 100%;
+        opacity: 0.5;
+        z-index: 99;
+    }
+
+    .mole-app .app-top {
+        font-size: 14px;
+        background-color: #333;
+        color: #fff;
+        padding: 7px 11px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 10;
+    }
+
+        .mole-app .app-top .top-title {
+            display: inline-block;
+            font-weight: bold;
+        }
+
+            .mole-app .app-top .top-title i {
+                margin: 0 4px;
+            }
+
+            .mole-app .app-top .top-title span {
+                vertical-align: top;
+            }
+
+        .mole-app .app-top .top-status {
+            float: right;
+            display: none;
+        }
+
+            .mole-app .app-top .top-status .status-my {
+                color: #c3ff98;
+            }
+
+            .mole-app .app-top .top-status .status-enemy {
+                color: #ff8383;
+            }
+
+            .mole-app .app-top .top-status .status-diamond {
+                color: #8af9ff;
+            }
+
+    .mole-app .app-soil {
+        background: #565656;
+        width: 100%;
+        padding-top: 35px;
+    }
+
+        .mole-app .app-soil .each-soil {
+            background-color: #565656;
+            cursor: pointer;
+            display: inline-block;
+            outline: 1px solid #ddd;
+            overflow: hidden;
+            opacity: 1;
+            position: relative;
+        }
+
+            .mole-app .app-soil .each-soil.accessable {
+                background-color: #ffd800;
+            }
+
+                .mole-app .app-soil .each-soil.accessable.blink {
+                    background-color: #ffa500;
+                }
+
+            .mole-app .app-soil .each-soil img {
+                vertical-align: bottom;
+                transition: all 1s;
+            }
+
+    .mole-app .app-status {
+        width: 100%;
+        padding-bottom: 34px;
+    }
+
+        .mole-app .app-status .status-top {
+            background-color: #ddd;
+            font-size: 12px;
+            padding: 4px;
+            font-weight: bold;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .mole-app .app-status .status-unit {
+            margin-top: -1px;
+        }
+
+            .mole-app .app-status .status-unit .each-unit,
+            .mole-app .app-status .status-item .each-item {
+                cursor: pointer;
+                width: 16.67%;
+                font-size: 14px;
+                border-right: 1px solid #eee;
+                display: inline-block;
+                text-align: center;
+                position: relative;
+                padding-bottom: 14px;
+            }
+
+                .mole-app .app-status .status-unit .each-unit:last-child,
+                .mole-app .app-status .status-item .each-item:last-child {
+                    border-right: 0;
+                }
+
+                .mole-app .app-status .status-unit .each-unit.selected,
+                .mole-app .app-status .status-item .each-item.selected {
+                    background: #c3ff98;
+                }
+
+                .mole-app .app-status .status-unit .each-unit span,
+                .mole-app .app-status .status-item .each-item span {
+                    position: absolute;
+                    font-size: 10px;
+                    right: 3px;
+                    bottom: 18px;
+                    background-color: #333;
+                    color: #fff;
+                    padding: 2px 0;
+                    border-radius: 50%;
+                    width: 18px;
+                    text-align: center;
+                }
+
+                .mole-app .app-status .status-unit .each-unit div,
+                .mole-app .app-status .status-item .each-item div {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    color: #fff;
+                    background: #333;
+                    width: 100%;
+                    font-size: 11px;
+                    padding: 1px 0;
+                }
+
+        .mole-app .app-status .status-item {
+            margin-top: 1px;
+        }
+
+    .mole-app .app-modal {
+        display: none;
+        position: fixed;
+        top: 150px;
+        left: 0;
+        font-size: 14px;
+        width: 100%;
+    }
+
+        .mole-app .app-modal .modal-wrapper {
+            width: 210px;
+            margin: 0 auto;
+        }
+
+        .mole-app .app-modal button {
+            width: 100%;
+            margin: 4px 0;
+        }
+
+    .mole-app .app-first {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #fff;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+    }
+
+        .mole-app .app-first .first-wrapper {
+            color: #333333;
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            cursor: pointer;
+            margin-top: -120px;
+            left: 0;
+        }
+
+        .mole-app .app-first i {
+            font-size: 100px;
+        }
+
+        .mole-app .app-first h1 {
+            font-style: italic;
+            margin: 35px 0;
+            font-weight: bold;
+            color: #fff;
+            background: #333;
+            display: inline-block;
+            padding: 12px 21px;
+        }
+
+    .mole-app .app-message {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        left: 0;
+        color: #fff;
+        /*background-color: #ffa500;*/
+        background-color: #333;
+        padding: 7px;
+        text-align: center;
+        font-size: 14px;
+    }
+
+.app-fixed-btn {
+    position: fixed;
+    bottom: 40px;
+    right: 10px;
+}
+
+.mole-app .app-fixed-btn button {
+    padding: 10px 13px;
+    border: 1px;
+    width: 42px;
+}
+
+    .mole-app .app-fixed-btn button.btn-change-turn {
+        background-color: #333;
+        color: #fff;
+    }
+
+.mole-app .info-modal {
+    font-size: 12px;
+}
+
+    .mole-app .info-modal .modal-image {
+        text-align: center;
+        border-radius: 50%;
+        width: 180px;
+        margin: 0 auto 14px auto;
+        padding: 24px 34px 44px 34px;
+        background: #eee;
+    }
+
+        .mole-app .info-modal .modal-image img {
+            width: 100%;
+        }
+
+    .mole-app .info-modal .modal-text th {
+        text-align: right;
+        width: 40%;
+    }
+
+    .mole-app .info-modal .modal-text tr.description td {
+        background: #fff;
+        padding-top: 20px;
+        padding-bottom: 0;
+        text-align: center;
+    }
+
+    .mole-app .info-modal .modal-footer button {
+        font-size: 12px;
+    }
+
+        .mole-app .info-modal .modal-footer button.btn-set {
+            background: #404040;
+            color: #fff;
+        }
+
+.mole-app.turn-player1 .player2 *,
+.mole-app.turn-player2 .player1 * {
+    background-color: #ff4747;
+}
+
+.mole-app.turn-player1 .player2.dig *,
+.mole-app.turn-player2 .player1.dig * {
+    display: none;
+}
+
+.mole-app.turn-player1 .light1,
+.mole-app.turn-player2 .light2 {
+    background-image: url(../img/item-light.png) !important;
+    background-size: 50px !important;
+    background-repeat: no-repeat !important;
+    background-position: 50% 50% !important;
+}
+
+    .mole-app.turn-player1 .light1 *,
+    .mole-app.turn-player2 .light2 * {
+        display: inline-block !important;
+    }
+
+.mole-app.turn-player1 .trap1,
+.mole-app.turn-player2 .trap2 {
+    background-image: url(../img/item-trap.png) !important;
+    background-size: 50px !important;
+    background-repeat: no-repeat !important;
+    background-position: 50% 90% !important;
+}
+
+/* customize */
+.modal-dialog {
+    margin-top: 40px;
+}
+
+.modal-backdrop {
+    background: none;
+    opacity: 1;
+}

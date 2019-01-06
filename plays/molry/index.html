@@ -1,0 +1,171 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/style.css?2" rel="stylesheet" />
+</head>
+<body ng-app="moleApp">
+    <div id="moleApp" class="mole-app" ng-class="'turn-player' + status.turn" ng-controller="moleCtrl" ng-init="init()">
+        <div class="app-top">
+            <div class="top-title">
+                <span>Molry</span>
+            </div>
+            <div class="top-status">
+                <span class="status-my">
+                    <i class="fa fa-street-view"></i>&nbsp;
+                    {{ player[getTurn('my')].units.field }}
+                    /
+                    {{ player[status.turn].units.bench }}
+                </span> &nbsp; &nbsp; &nbsp;
+                <span class="status-enemy">
+                    <i class="fa fa-street-view"></i>&nbsp;
+                    {{ player[getTurn('enemy')].units.field }}
+                    /
+                    {{ player[getTurn('enemy')].units.bench }}
+                </span> &nbsp; &nbsp; &nbsp;
+                <span class="status-diamond">
+                    <i class="fa fa-diamond"></i>&nbsp;
+                    {{ player[status.turn].diamond }}
+                    /
+                    {{ maxDia }}
+                </span>
+            </div>
+        </div>
+        <div id="moleAppWrapper" class="app-wrapper">
+            <div class="app-soil">
+                <div class="each-soil selectable" ng-style="soil.style" ng-repeat="i in soil.loop" ng-click="select('soil', $event)"></div>
+            </div>
+            <div class="app-status">
+                <div class="status-top">보유 현황</div>
+                <div class="status-unit">
+                    <div class="each-unit selectable" ng-repeat="u in units" ng-click="select('bench', $event, u)">
+                        <img class="unit" data-name="{{ u.name }}" data-straight="{{ u.straight }}" ng-src="img/unit-{{ u.name }}.png" />
+                        <span>{{ u.diamond }}</span>
+                        <div class="item-name">{{ u.name }}</div>
+                    </div>
+                </div>
+                <div class="status-item">
+                    <div class="each-item selectable" data-name="{{ i.name }}" ng-repeat="i in items" ng-click="select('item', $event, i)">
+                        <img ng-src="img/item-{{ i.name }}.png" />
+                        <span>{{ i.diamond }}</span>
+                        <div class="item-name">{{ i.name }}</div>
+                    </div>
+                </div>
+            </div>
+            <div id="appModal" class="app-modal">
+                <div class="modal-wrapper">
+                    <div class="modal-mole">
+                        <div class="mole-content">
+                            <button type="button" class="btn" ng-click="moleModalSelect(s)" ng-repeat="s in status.unit.skills">{{ lang(s) }}(1)</button>
+                            <button type="button" class="btn" ng-click="moleModalSelect('cancel')">취소(0)</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="app-first">
+                <div class="first-wrapper" ng-click="start($event)">
+                    <i class="fa fa-legal"></i>
+                    <br />
+                    <h1>Play Molry</h1>
+                </div>
+            </div>
+        </div>
+        <div class="app-fixed-btn btn-group">
+            <button id="toggleEffect" class="btn btn-toggle-bgm" ng-click="toggleEffect()">
+                <span class="fa" ng-class="isEffectOn ? 'fa-bell' : 'fa-bell-slash'"></span>
+            </button>
+            <button id="toggleBgm" class="btn btn-toggle-bgm" ng-click="toggleBgm()">
+                <span class="fa" ng-class="isBgmOn ? 'fa-bell-o' : 'fa-bell-slash-o'"></span>
+            </button>
+            <button id="changeTurnBtn" class="btn btn-change-turn" ng-click="changeTurn()" disabled>
+                <span class="glyphicon glyphicon-share-alt"></span>
+            </button>
+        </div>
+        <div class="app-message">{{ message }}</div>
+        <div class="hide">
+            <audio id="audioPlayer1">
+                <source src="audio/effect/hammer.mp3" type="audio/mp3" />
+            </audio>
+            <audio id="audioPlayer2">
+                <source src="audio/speech/start.mp3" type="audio/mp3" />
+            </audio>
+            <audio id="audioPlayer3" loop>
+                <source src="audio/bgm/bgm.mp3" type="audio/mp3" />
+            </audio>
+        </div>
+        <div id="infoModal" class="info-modal modal" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="modal-image">
+                            <img ng-src="img/{{ info.type }}-{{ info.name }}.png" />
+                        </div>
+                        <div class="modal-text">
+                            <table class="table table-striped">
+                                <tbody>
+                                    <tr>
+                                        <th>
+                                            <b>이름</b>
+                                        </th>
+                                        <td class="text-center">:</td>
+                                        <td>
+                                            {{ info.name }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <b>타입</b>
+                                        </th>
+                                        <td class="text-center">:</td>
+                                        <td>
+                                            {{ info.type === 'unit' ? '유닛' : '아이템' }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <b>다이아</b>
+                                        </th>
+                                        <td class="text-center">:</td>
+                                        <td>
+                                            {{ info.diamond }}
+                                        </td>
+                                    </tr>
+                                    <tr ng-if="info.type === 'unit'">
+                                        <th>스킬</th>
+                                        <td class="text-center">:</td>
+                                        <td>
+                                            {{ info.skills.indexOf('move') >= 0 ? '이동 /' : '' }}
+                                            {{ info.skills.indexOf('attack') >= 0 ? '공격 /' : '' }}
+                                            {{ info.skills.indexOf('dig') >= 0 ? '땅 파기' : '' }}
+                                        </td>
+                                    </tr>
+                                    <tr class="description">
+                                        <td colspan="3">
+                                            {{ info.description }}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn btn-set" data-dismiss="modal" ng-click="allocate(info)" ng-if="info.allocatable">배치하기</button>
+                            <button type="button" class="btn btn btn-set" data-dismiss="modal" ng-click="useNow(info)" ng-if="!info.allocatable">사용하기</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/script.js?2"></script>
+</body>
+</html>

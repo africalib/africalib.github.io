@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>March of the King</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/app.common.css" rel="stylesheet" />
+	<link href="css/app.index.css?<?php echo date('Ymdhis')?>" rel="stylesheet" />
+	<script src="js/angular.min.js"></script>
+	<script src="js/hammer.min.js"></script>
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/app.library.js?<?php echo date('Ymdhms')?>"></script>
+	<script src="js/app.index.js?<?php echo date('Ymdhis')?>"></script>
+	<script>
+		var global = {
+			online: '' === '1',
+			id: '',
+			first: '0',
+			player: ''
+		};
+	</script>
+</head>
+<body>
+</script>
+<div id="app" class="app" data-device="{{ ::device }}" data-line="{{ global.online ? 'online' : 'offline' }}" data-player="{{ getPlayer() }}" ng-app="app" ng-controller="appCtrl" ng-init="init()" ng-cloak>
+    <div class="app-area">
+        <div class="area-wrapper">
+            <div class="each-area" ng-class="{'active' : active.idx === a.idx }" ng-repeat="a in areas track by $index" data-idx="{{ ::a.idx }}" data-owner="{{ a.owner }}" data-type="{{ ::a.type }}" data-player="{{ a.player }}" data-vidx="{{ ::a.vidx }}" data-hidx="{{ ::a.hidx }}" data-vnum="{{ ::a.vnum }}" data-hnum="{{ ::a.hnum }}" data-status="{{ a.status }}" ng-click="(!global.online || global.player === status.turn) && status.touchable && touch($index)">
+                <div class="unit" data-player="{{ a.unit.player }}" data-name="{{ a.unit.name }}" data-direction="{{ a.unit.direction }}" data-rotate="{{ a.unit.rotate }}" data-status="{{ a.unit.status }}" ng-if="a.unit.name" ng-style="a.unit.style">
+                    <img ng-src="img/{{ a.unit.player }}/{{ a.unit.name }}.png" />
+                    <div class="power">{{ a.unit.power }}</div>
+                    <div class="exp" ng-if="a.unit.level">
+                        <div class="exp-wrapper">
+                            <div class="status" ng-style="{ height : ((a.unit.exp) / a.unit.maxExp * 100) + '%' }"></div>
+                        </div>
+                    </div>
+                    <div class="hp" ng-if="a.unit.hp && a.unit.maxHp">
+                        <div class="remain" ng-style="{ width : (a.unit.hp / a.unit.maxHp * 100) + '%' }"></div>
+                    </div>
+                    <div class="level" ng-if="a.unit.level">{{ a.unit.level }}</div>
+                </div>
+                <div class="shelter" data-player="{{ a.shelter.player }}" data-name="{{ a.shelter.name }}" ng-if="a.shelter.name">
+                    <img ng-src="img/{{ a.shelter.player }}/{{ a.shelter.name }}.png" />
+                    <div class="hp" ng-if="a.shelter.hp && a.shelter.maxHp">
+                        <div class="remain" ng-style="{ width : (a.shelter.hp / a.shelter.maxHp * 100) + '%' }"></div>
+                    </div>
+                </div>
+                <div class="weapon" data-direction="{{ a.weapon.direction }}" data-status="{{ a.weapon.status }}" data-name="{{ a.weapon.name }}" ng-if="a.weapon.name" ng-style="a.weapon.style">
+                    <img ng-src="img/common/weapon.{{ a.weapon.name }}.png" />
+                </div>
+            </div>
+        </div>
+        <div class="area-player" data-player="white">
+			<div class="units">
+				<div class="each-unit" data-name="{{ u.name }}" ng-class="{ 'active' : status.turn === 'white' && u.name === grabbed.name }" ng-repeat="u in getReversed(default.units)" ng-click="(!global.online || global.player === 'white') && grab('white', u.name)" ng-if="u.crop">
+					<div>{{ u.name }}<br />({{ u.crop }})</div>
+					<img ng-src="img/white/{{ u.name }}.png" data-rotate="{{ u.rotate }}" />
+				</div>
+			</div>
+            <div class="status">
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>
+								<i class="fa fa-pagelines" aria-hidden="true"></i>
+							</th>
+                            <td>{{ status.white.crop }} / {{ default.maxCrop }}</td>
+                            <td class="button" rowspan="3">
+                                <button type="button" ng-click="(!global.online || global.player === 'white') && status.passable && pass('black')" ng-if="!status.finished && status.turn === 'white'">pass</button>
+                                <button type="button" ng-click="(!global.online || global.player === 'white') && pause('white')" ng-if="!status.finished && status.turn !== 'white'">pause</button>
+                                <button type="button" ng-click="(!global.online || global.player === 'white') && goHome()" ng-if="status.finished">home</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+								<i class="fa fa-clock-o" aria-hidden="true"></i>
+							</th>
+                            <td>{{ status.white.time }} / {{ default.time }}</td>
+                        </tr>
+                        <tr>
+                            <th>
+								<i class="fa fa-user" aria-hidden="true"></i>
+							</th>
+                            <td>{{ status.white.units }} / {{ default.maxUnit }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="area-player" data-player="black">
+			<div class="units">
+				<div class="each-unit" data-name="{{ u.name }}" ng-class="{ 'active' : status.turn === 'black' && u.name === grabbed.name }" ng-repeat="u in default.units" ng-click="(!global.online || global.player === 'black') && grab('black', u.name)" ng-if="u.crop">
+					<div>{{ u.name }}<br />({{ u.crop }})</div>
+					<img ng-src="img/black/{{ u.name }}.png" data-rotate="{{ u.rotate }}" />
+				</div>
+			</div>
+            <div class="status">
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>
+								<i class="fa fa-pagelines" aria-hidden="true"></i>
+							</th>
+                            <td>{{ status.black.crop }} / {{ default.maxCrop }}</td>
+                            <td class="button" rowspan="3">
+                                <button type="button" ng-click="(!global.online || global.player === 'black') && status.passable && pass('white')" ng-if="!status.finished && status.turn === 'black'">pass</button>
+                                <button type="button" ng-click="(!global.online || global.player === 'black') && pause('black')" ng-if="!status.finished && status.turn !== 'black'">pause</button>
+                                <button type="button" ng-click="(!global.online || global.player === 'black') && goHome()" ng-if="status.finished">home</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+								<i class="fa fa-clock-o" aria-hidden="true"></i>
+							</th>
+                            <td>{{ status.black.time }} / {{ default.time }}</td>
+                        </tr>
+                        <tr>
+                            <th>
+								<i class="fa fa-user" aria-hidden="true"></i>
+							</th>
+                            <td>{{ status.black.units }} / {{ default.maxUnit }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="pause-area" ng-if="status.paused"></div>
+        <div id="labelArea" class="label-area" data-player="{{ label.player }}" ng-click="touchLabel()" ng-if="label.message">
+            <div>{{ label.message }}</div>
+        </div>
+        <div class="modal-area" data-player="{{ modal.info.player }}" data-turn="{{ getPlayer() }}" ng-if="modal.info.name">
+            <div class="img-part">
+                <span>
+                    <img ng-src="img/{{ modal.info.player }}/{{ modal.info.name }}.png" data-rotate="{{ modal.info.rotate }}" />
+                </span>
+            </div>
+            <div class="info-part">
+                <table class="table" ng-if="modal.type === 'shelter'">
+                    <tbody>
+                        <tr>
+                            <th>{{ ::getLang('ko', 'name') }}</th>
+                            <td>:</td>
+                            <td>{{ modal.info.name }}</td>
+                        </tr>
+                        <tr>
+                            <th>{{ ::getLang('ko', 'type') }}</th>
+                            <td>:</td>
+                            <td>shelter</td>
+                        </tr>
+                    </tbody>
+                </table>
+                </table>
+                <table class="table" ng-if="modal.type === 'unit'">
+                    <tbody>
+                        <tr>
+                            <th>{{ ::getLang('ko', 'name') }}</th>
+                            <td>:</td>
+                            <td>{{ modal.info.name }}</td>
+                            <th>{{ ::getLang('ko', 'type') }}</th>
+                            <td>:</td>
+                            <td>unit</td>
+                        </tr>
+                        <tr>
+                            <th>{{ ::getLang('ko', 'level') }}</th>
+                            <td>:</td>
+                            <td>{{ modal.info.level }} / {{ modal.info.maxLevel }}</td>
+                            <th>{{ ::getLang('ko', 'exp') }}</th>
+                            <td>:</td>
+                            <td>{{ modal.info.exp }} / {{ modal.info.maxExp }}</td>
+                        </tr>
+                        <tr>
+                            <th>{{ ::getLang('ko', 'move') }}</th>
+                            <td>:</td>
+                            <td>{{ getModalInfoProp('move') }} / {{ modal.info.maxMove }}</td>
+                            <th>{{ ::getLang('ko', 'defense') }}</th>
+                            <td>:</td>
+                            <td>{{ getModalInfoProp('defense') }}</td>
+                        </tr>
+                        <tr>
+                            <th>{{ ::getLang('ko', 'crop') }}</th>
+                            <td>:</td>
+                            <td>{{ modal.info.crop }}</td>
+                            <th>{{ ::getLang('ko', 'farm') }}</th>
+                            <td>:</td>
+                            <td>&times; {{ getModalInfoProp('farm') }}</td>
+                        </tr>
+                        <tr>
+                            <th>{{ ::getLang('ko', 'direction') }}</th>
+                            <td>:</td>
+                            <td>{{ modal.info.direction }}</td>
+                            <th>{{ ::getLang('ko', 'destory') }}</th>
+                            <td>:</td>
+                            <td>{{ modal.info.destory }}</td>
+                        </tr>
+                        <tr>
+                            <th>{{ ::getLang('ko', 'power') }}</th>
+                            <td>:</td>
+                            <td>{{ modal.info.power }} / {{ getModalInfoProp('maxPower') }}</td>
+                            <th>{{ ::getLang('ko', 'restorePower') }}</th>
+                            <td>:</td>
+                            <td>{{ modal.info.restorePower }}</td>
+                        </tr>
+                        <tr>
+                            <th>{{ ::getLang('ko', 'hp') }}</th>
+                            <td>:</td>
+                            <td>{{ modal.info.hp }} / {{ getModalInfoProp('maxHp') }}</td>
+                            <th>{{ ::getLang('ko', 'restoreHp') }}</th>
+                            <td>:</td>
+                            <td>{{ getModalInfoProp('restoreHp') }}</td>
+                        </tr>
+                        <tr>
+                            <th>{{ ::getLang('ko', 'attack') }}</th>
+                            <td>:</td>
+                            <td>{{ getModalInfoProp('attack') }}</td>
+                            <th>{{ ::getLang('ko', 'distance') }}</th>
+                            <td>:</td>
+                            <td>{{ getModalInfoProp('distance') }} / {{ modal.info.maxDistance }}</td>
+                        </tr>
+                        <tr>
+                            <th>{{ ::getLang('ko', 'accel') }}</th>
+                            <td>:</td>
+                            <td>{{ ::getLang('ko', modal.info.accel) }}</td>
+                            <th>{{ ::getLang('ko', 'through') }}</th>
+                            <td>:</td>
+                            <td>{{ ::getLang('ko', modal.info.through) }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+			<div class="ride-part" ng-if="modal.info.rided.length">
+				<div>{{ ::getLang('ko', 'ride') }}</div>
+				<span ng-repeat="r in modal.info.rided" ng-click="status.turn === modal.info.player && getPlayer() === modal.info.player && status.droppable && setDrop(modal.idx, $index)">
+					<img ng-src="img/{{ modal.info.player }}/{{ r.name }}.png" data-rotate="{{ r.rotate }}" />
+				</span>
+			</div>
+            <span class="close-btn" ng-click="closeModal()">&times;</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

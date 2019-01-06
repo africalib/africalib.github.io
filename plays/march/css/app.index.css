@@ -1,0 +1,636 @@
+﻿html, body {
+    height: 100%;
+    overflow: hidden;
+	touch-action: manipulation;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+button {
+    outline: 0 !important;
+}
+
+.hided {
+    display: none;
+}
+
+.app {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    display: none;
+}
+
+    .app .app-area {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        font-size: 0;
+        padding: 5rem 0;
+        overflow: hidden;
+    }
+
+        .app .app-area .area-wrapper {
+            position: relative;
+            height: 100%;
+            overflow: hidden;
+        }
+
+            .app .app-area .area-wrapper .each-area {
+                background: #eee;
+                display: inline-block;
+                width: calc(100%/10);
+                outline: 0.1rem solid #ddd;
+                height: calc(100%/16);
+                position: relative;
+                cursor: pointer;
+            }
+
+                .app .app-area .area-wrapper .each-area.nature {
+                    background: none;
+                }
+
+                .app .app-area .area-wrapper .each-area .unit,
+                .app .app-area .area-wrapper .each-area .shelter,
+                .app .app-area .area-wrapper .each-area .weapon {
+                    position: absolute;
+                    /*top:0;
+					left:0;*/
+                    display: inline-block;
+                    text-align: center;
+                    width: 100%;
+                    height: 100%;
+                }
+
+                    .app .app-area .area-wrapper .each-area .unit[data-status=move],
+                    .app .app-area .area-wrapper .each-area .weapon[data-status=move] {
+                        transition: top 0.2s, left 0.2s;
+                        -webkit-transition: top 0.2s, left 0.2s; /* Safari */
+                        z-index: 1;
+                    }
+
+                    .app .app-area .area-wrapper .each-area .unit img,
+                    .app .app-area .area-wrapper .each-area .shelter img {
+                        padding: 0.7rem;
+                    }
+
+                    .app .app-area .area-wrapper .each-area .unit .power,
+                    .app .app-area .area-wrapper .each-area .unit .level {
+                        position: absolute;
+                        padding: 0 0.2rem;
+                        font-size: 1rem;
+                    }
+
+                    .app .app-area .area-wrapper .each-area .unit .exp {
+                        position: absolute;
+                        height: 100%;
+                        width: 0.5rem;
+                        padding-bottom: 0.5rem;
+                    }
+
+                        .app .app-area .area-wrapper .each-area .unit .exp .exp-wrapper {
+                            height: 100%;
+                            position: relative;
+                        }
+
+                        .app .app-area .area-wrapper .each-area .unit .exp .status {
+                            width: 100%;
+                            max-height: 100%;
+                            background: #1eecbc;
+                            position: absolute;
+                        }
+
+                    .app .app-area .area-wrapper .each-area .unit .level:before {
+                        content: 'L';
+                    }
+
+                    .app .app-area .area-wrapper .each-area .unit .hp,
+                    .app .app-area .area-wrapper .each-area .shelter .hp {
+                        position: absolute;
+                        left: 0;
+                        width: 100%;
+                        height: 0.5rem;
+                    }
+
+                        .app .app-area .area-wrapper .each-area .unit .hp .remain,
+                        .app .app-area .area-wrapper .each-area .shelter .hp .remain {
+                            height: 100%;
+                        }
+
+                        .app .app-area .area-wrapper .each-area .unit .hp .remain {
+                            background: #ff4141;
+                        }
+
+                        .app .app-area .area-wrapper .each-area .shelter .hp .remain {
+                            background: #96d80f;
+                        }
+
+                .app .app-area .area-wrapper .each-area[data-owner='white'] {
+                    background: #fff;
+                }
+
+                .app .app-area .area-wrapper .each-area[data-owner='black'] {
+                    background: #fdfff1;
+                }
+			
+				.app .app-area .area-wrapper .each-area[data-type='sea']{
+					background: #e0f7f4;
+				}
+
+                .app .app-area .area-wrapper .each-area .unit[data-direction='3'] img,
+                .app .app-area .area-wrapper .each-area .weapon[data-direction='3'] img {
+                    transform: rotate(90deg);
+                }
+
+                .app .app-area .area-wrapper .each-area .unit[data-direction='6'] img,
+                .app .app-area .area-wrapper .each-area .weapon[data-direction='6'] img {
+                    transform: rotate(180deg);
+                }
+
+                .app .app-area .area-wrapper .each-area .unit[data-direction='9'] img,
+                .app .app-area .area-wrapper .each-area .weapon[data-direction='9'] img {
+                    transform: rotate(270deg);
+                }
+
+                .app .app-area .area-wrapper .each-area .unit[data-direction='12'] img,
+                .app .app-area .area-wrapper .each-area .weapon[data-direction='12'] img {
+                    transform: rotate(0);
+                }
+
+                .app .app-area .area-wrapper .each-area .unit[data-player=white],
+                .app .app-area .area-wrapper .each-area .shelter[data-player=white] {
+                    background: #fff;
+                }
+
+    .app[data-line=online][data-player=white] .app-area .area-wrapper .each-area .unit[data-player=white] + .shelter[data-player=white] {
+        background: rgba(255, 255, 255, 0.7);
+    }
+
+    .app[data-line=online][data-player=black] .app-area .area-wrapper .each-area .unit[data-player=black] + .shelter[data-player=black] {
+        background: rgba(0, 0, 0, 0.25);
+    }
+
+    .app .app-area .area-wrapper .each-area .shelter[data-player=white] img {
+        transform: rotate(180deg);
+    }
+
+    .app .app-area .area-wrapper .each-area .unit[data-player=white] .power {
+        bottom: 0;
+        left: 0;
+        transform: rotate(180deg);
+    }
+
+    .app .app-area .area-wrapper .each-area .unit[data-player=white] .level {
+        color: #000;
+        top: 0.5rem;
+        right: 0;
+        background: rgba(255, 255, 255, 0.75);
+        transform: rotate(180deg);
+    }
+
+    .app .app-area .area-wrapper .each-area .unit[data-player=white] .exp {
+        right: 0;
+        top: 0;
+        padding-bottom: 0;
+        padding-top: 0.5rem;
+    }
+
+        .app .app-area .area-wrapper .each-area .unit[data-player=white] .exp .status {
+            top: 0;
+            right: 0;
+        }
+
+    .app .app-area .area-wrapper .each-area .unit[data-player=white] .hp,
+    .app .app-area .area-wrapper .each-area .shelter[data-player=white] .hp {
+        background: #000;
+        top: 0;
+    }
+
+	.app .app-area .area-wrapper .each-area .unit[data-player=white][data-direction='3'][data-rotate='90'] img {
+        transform: rotate(90deg) scaleX(-1);
+    }
+
+    .app .app-area .area-wrapper .each-area .unit[data-player=black],
+    .app .app-area .area-wrapper .each-area .shelter[data-player=black] {
+        background: #000;
+    }
+
+        .app .app-area .area-wrapper .each-area .unit[data-player=black] .power {
+            color: #fff;
+            top: 0;
+            right: 0;
+        }
+
+        .app .app-area .area-wrapper .each-area .unit[data-player=black] .level {
+            color: #fff;
+            bottom: 0.5rem;
+            left: 0px;
+            background: rgba(0, 0, 0, 0.25);
+        }
+
+        .app .app-area .area-wrapper .each-area .unit[data-player=black] .exp {
+            left: 0;
+            bottom: 0;
+        }
+
+            .app .app-area .area-wrapper .each-area .unit[data-player=black] .exp .status {
+                bottom: 0;
+                left: 0;
+            }
+
+        .app .app-area .area-wrapper .each-area .unit[data-player=black] .hp,
+        .app .app-area .area-wrapper .each-area .shelter[data-player=black] .hp {
+            background: #fff;
+            bottom: 0;
+        }
+
+        .app .app-area .area-wrapper .each-area .unit[data-player=black][data-direction='9'][data-rotate='90'] img {
+            transform: rotate(270deg) scaleX(-1);
+        }
+
+    .app .app-area .area-wrapper .each-area[data-status=attack],
+    .app .app-area .area-wrapper .each-area[data-status=attack] .unit,
+    .app .app-area .area-wrapper .each-area[data-status=attack] .shelter {
+        background: orange;
+    }
+
+    .app .app-area .area-wrapper .each-area[data-status=move],
+    .app .app-area .area-wrapper .each-area[data-status=enter] {
+        background: #efffcd;
+    }
+	
+	.app .app-area .area-wrapper .each-area[data-status=move] .shelter[data-player=white],
+	.app .app-area .area-wrapper .each-area[data-status=enter] .shelter[data-player=white]	{
+		background: #dcecb7;
+	}
+	
+	.app .app-area .area-wrapper .each-area[data-status=move] .shelter[data-player=black],
+	.app .app-area .area-wrapper .each-area[data-status=enter] .shelter[data-player=black]	{
+		background: #546f18;
+	}
+	
+    .app .app-area .area-wrapper .each-area[data-status=ride] .unit[data-player=white]  {
+		background: #24b6ff;
+	}
+	
+    .app .app-area .area-wrapper .each-area[data-status=ride] .unit[data-player=black]  {
+		background: #5f9ea0;
+	}
+
+    .app .app-area .area-wrapper .each-area .show-up {
+        position: absolute;
+        display: inline-block;
+        font-size: 0.9rem;
+        color: #fff;
+        padding: 0.1rem 0.3rem;
+        z-index: 2;
+    }
+
+        .app .app-area .area-wrapper .each-area .show-up[data-act=attack] {
+            background: #ff4141;
+        }
+
+        .app .app-area .area-wrapper .each-area .show-up[data-act=restoreHp] {
+            background: yellowgreen;
+        }
+
+        .app .app-area .area-wrapper .each-area .show-up[data-act=levelUp] {
+            background: #1eecbc;
+        }
+
+        .app .app-area .area-wrapper .each-area .show-up[data-player=white] {
+            bottom: 0;
+            right: 0;
+            transform: rotate(180deg);
+        }
+
+        .app .app-area .area-wrapper .each-area .show-up[data-player=black] {
+            top: 0;
+            left: 0;
+        }
+
+    .app .app-area .area-wrapper .each-area.active .unit {
+        background: #b3b3b3;
+    }
+
+    .app .app-area .area-player {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        height: 5rem;
+    }
+	
+	.app .app-area .area-player .units {
+		width: 70%;
+		position: absolute;
+		white-space: nowrap;
+		overflow: auto;
+		height: 100%;
+		-webkit-overflow-scrolling: touch;
+	}
+	
+	.app[data-device=pc] .app-area .area-player .units::-webkit-scrollbar {
+	  height: 5px;
+	  width: 5px;
+	  border: 1px solid #eee;
+	  background: #eee;
+	}
+
+	.app[data-device=pc] .app-area .area-player .units::-webkit-scrollbar-thumb:horizontal{
+		background: #999;
+	}
+
+        .app .app-area .area-player .each-unit {
+            display: inline-block;
+            width: calc(100%/7);
+            cursor: pointer;
+            height: 100%;
+            position: relative;
+            text-align: center;
+            overflow: hidden;
+        }
+		
+		.app .app-area .area-player[data-player=white] .each-unit  {
+			padding: 2.4rem 0.8rem 0.6rem 0.8rem;
+		}
+		
+		.app .app-area .area-player[data-player=black] .each-unit  {
+			padding: 0.6rem 0.8rem 2.4rem 0.8rem;
+		}
+
+            .app .app-area .area-player .each-unit * {
+                -webkit-user-select: none;
+                -khtml-user-select: none;
+                -moz-user-select: none;
+                -o-user-select: none;
+                user-select: none;
+            }
+
+            .app .app-area .area-player .each-unit img {
+            }
+		
+			.app .app-area .area-player[data-player=white] .each-unit img[data-rotate='90'] {
+				transform:rotate(-90deg);
+			}
+		
+			.app .app-area .area-player[data-player=black] .each-unit img[data-rotate='90'] {
+				transform:rotate(90deg);
+			}
+
+            .app .app-area .area-player .each-unit div {
+                text-align: center;
+                font-size: 0.9rem;
+                line-height: 1;
+                position: absolute;
+                left: 0;
+                width: 100%;
+            }
+
+        .app .app-area .area-player .status {
+            display: inline-block;
+            font-size: 1.2rem;
+            padding: 0.4rem;
+            height: 100%;
+            width: 30%;
+        }
+
+            .app .app-area .area-player .status table {
+                width: 100%;
+            }
+
+                .app .app-area .area-player .status table th {
+                    font-size: 1rem;
+                    padding-right: 1rem;
+                    text-align: right;
+                }
+
+                .app .app-area .area-player .status table td {
+                    text-align: left;
+                    font-size: 1rem;
+                }
+
+                    .app .app-area .area-player .status table td.button {
+                        text-align: right;
+                    }
+
+            .app .app-area .area-player .status button {
+                border: 0;
+                float: right;
+                padding: 1.2rem 0;
+                font-size: 1rem;
+                width: 33px;
+            }
+
+        .app .app-area .area-player[data-player=white] {
+            top: 0;
+            text-align: right;
+            background: #fff;
+            border-bottom: 1px solid #ddd;
+        }
+		
+		.app .app-area .area-player[data-player=white] .units {
+			right: 0;
+		}
+
+            .app .app-area .area-player[data-player=white] .each-unit {
+                border-right: 0.1rem solid #ddd;
+            }
+
+                .app .app-area .area-player[data-player=white] .each-unit:first-child {
+                    /*border-right-color: #fff;*/
+                }
+
+                .app .app-area .area-player[data-player=white] .each-unit.active {
+                    background: #eee;
+                }
+
+                .app .app-area .area-player[data-player=white] .each-unit img {
+                    transform: rotate(180deg);
+                }
+
+                .app .app-area .area-player[data-player=white] .each-unit div {
+                    transform: rotate(180deg);
+                    top: 0.3rem;
+                }
+
+            .app .app-area .area-player[data-player=white] .status {
+                transform: rotate(180deg);
+				float:left;
+                border-left: 1px solid #ddd;
+            }
+
+                .app .app-area .area-player[data-player=white] .status button {
+                    background: #000;
+                    color: #fff;
+                }
+
+        .app .app-area .area-player[data-player=black] {
+            bottom: 0;
+            background: #000;
+            border-top: 1px solid #ddd;
+        }
+		
+		.app .app-area .area-player[data-player=black] .units {
+			left: 0;
+		}
+
+            .app .app-area .area-player[data-player=black] .each-unit {
+                border-right: 0.1rem solid #ddd;
+            }
+
+                .app .app-area .area-player[data-player=black] .each-unit.active {
+                    background: #b3b3b3;
+                }
+
+                .app .app-area .area-player[data-player=black] .each-unit div {
+                    color: #fff;
+                    bottom: 0.3rem;
+                }
+
+            .app .app-area .area-player[data-player=black] .status {
+                color: #fff;
+                float: right;
+            }
+
+                .app .app-area .area-player[data-player=black] .status button {
+                    background: #fff;
+                    color: #000;
+                }
+
+    .app .pause-area {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        top: 0;
+        left: 0;
+        text-align: center;
+    }
+
+    .app .label-area {
+        position: absolute;
+        cursor: pointer;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        font-size: 2.1rem;
+        color: #fff;
+        text-align: center;
+        top: 50%;
+        font-weight: 600;
+        font-style: italic;
+        margin-top: -3.4rem;
+        padding: 2rem 0;
+    }
+
+        .app .label-area[data-player=white] {
+            transform: rotate(180deg);
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+        }
+
+    .app .modal-area {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        padding: 20px;
+		z-index: 100;
+		overflow:auto;
+		-webkit-overflow-scrolling: touch;
+    }
+
+        .app .modal-area .img-part {
+            margin: 10% 0 12.5% 0;
+            text-align: center;
+        }
+
+            .app .modal-area .img-part span {
+                padding: 30px;
+                display: inline-block;
+                border-radius: 50%;
+                width: 120px;
+                height: 120px;
+            }
+			
+            .app .modal-area[data-player=white] .img-part span {
+				background:#fff;
+			}
+		
+			.app .modal-area[data-player=black] .img-part span {
+				background:#000;
+			}
+			
+			.app .modal-area .img-part span img[data-rotate='90'] {
+				transform:rotate(90deg);
+			}
+
+        .app .modal-area .info-part table {
+            border-bottom: 1px solid #ddd;
+        }
+
+            .app .modal-area .info-part table th, .app .modal-area .info-part table td {
+                font-size: 1.1rem;
+                color: #fff;
+            }
+
+            .app .modal-area .info-part table th {
+                text-align: right;
+                font-weight: 600;
+            }
+			
+			.app .modal-area .ride-part {
+				color:#fff;
+			}
+			
+				.app .modal-area .ride-part div {
+					margin: 0 0.5rem 1rem 0.5rem;
+					font-size: 1.2rem;
+				}
+		
+				.app .modal-area .ride-part span {
+					cursor: pointer;
+					display: inline-block;
+					width: 42px;
+					padding: 10px;
+					border-radius: 50px;
+					margin: 5px;
+				}
+		
+		.app .modal-area[data-player=white] .ride-part span {
+			background:#fff;
+		}
+		
+		.app .modal-area[data-player=black] .ride-part span {
+			background:#000;
+		}
+		
+		.app .modal-area .ride-part span img[data-rotate='90'] {
+			transform:rotate(90deg);
+		}
+
+        .app .modal-area .close-btn {
+            position: absolute;
+            top: 0rem;
+            color: #fff;
+            right: 1rem;
+            font-size: 5rem;
+        }
+
+        .app .modal-area[data-turn=white] {
+            transform: rotate(180deg);
+        }
+
+    .app[data-line=online][data-player=white] {
+        transform: rotate(180deg);
+    }
+
+    .app[data-device=pc] {
+        width: 360px;
+        height: 720px;
+    }
