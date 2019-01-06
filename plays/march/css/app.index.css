@@ -1,7 +1,7 @@
 ﻿html, body {
     height: 100%;
     overflow: hidden;
-	touch-action: manipulation;
+    touch-action: manipulation;
 }
 
 img {
@@ -135,10 +135,10 @@ button {
                 .app .app-area .area-wrapper .each-area[data-owner='black'] {
                     background: #fdfff1;
                 }
-			
-				.app .app-area .area-wrapper .each-area[data-type='sea']{
-					background: #e0f7f4;
-				}
+
+                .app .app-area .area-wrapper .each-area[data-type='sea'] {
+                    background: #e0f7f4;
+                }
 
                 .app .app-area .area-wrapper .each-area .unit[data-direction='3'] img,
                 .app .app-area .area-wrapper .each-area .weapon[data-direction='3'] img {
@@ -209,7 +209,7 @@ button {
         top: 0;
     }
 
-	.app .app-area .area-wrapper .each-area .unit[data-player=white][data-direction='3'][data-rotate='90'] img {
+    .app .app-area .area-wrapper .each-area .unit[data-player=white][data-direction='3'][data-rotate='90'] img {
         transform: rotate(90deg) scaleX(-1);
     }
 
@@ -261,24 +261,24 @@ button {
     .app .app-area .area-wrapper .each-area[data-status=enter] {
         background: #efffcd;
     }
-	
-	.app .app-area .area-wrapper .each-area[data-status=move] .shelter[data-player=white],
-	.app .app-area .area-wrapper .each-area[data-status=enter] .shelter[data-player=white]	{
-		background: #dcecb7;
-	}
-	
-	.app .app-area .area-wrapper .each-area[data-status=move] .shelter[data-player=black],
-	.app .app-area .area-wrapper .each-area[data-status=enter] .shelter[data-player=black]	{
-		background: #546f18;
-	}
-	
-    .app .app-area .area-wrapper .each-area[data-status=ride] .unit[data-player=white]  {
-		background: #24b6ff;
-	}
-	
-    .app .app-area .area-wrapper .each-area[data-status=ride] .unit[data-player=black]  {
-		background: #5f9ea0;
-	}
+
+        .app .app-area .area-wrapper .each-area[data-status=move] .shelter[data-player=white],
+        .app .app-area .area-wrapper .each-area[data-status=enter] .shelter[data-player=white] {
+            background: #dcecb7;
+        }
+
+        .app .app-area .area-wrapper .each-area[data-status=move] .shelter[data-player=black],
+        .app .app-area .area-wrapper .each-area[data-status=enter] .shelter[data-player=black] {
+            background: #546f18;
+        }
+
+    .app .app-area .area-wrapper .each-area[data-status=ride] .unit[data-player=white] {
+        background: #24b6ff;
+    }
+
+    .app .app-area .area-wrapper .each-area[data-status=ride] .unit[data-player=black] {
+        background: #5f9ea0;
+    }
 
     .app .app-area .area-wrapper .each-area .show-up {
         position: absolute;
@@ -322,183 +322,183 @@ button {
         left: 0;
         height: 5rem;
     }
-	
-	.app .app-area .area-player .units {
-		width: 70%;
-		position: absolute;
-		white-space: nowrap;
-		overflow: auto;
-		height: 100%;
-		-webkit-overflow-scrolling: touch;
-	}
-	
-	.app[data-device=pc] .app-area .area-player .units::-webkit-scrollbar {
-	  height: 5px;
-	  width: 5px;
-	  border: 1px solid #eee;
-	  background: #eee;
-	}
 
-	.app[data-device=pc] .app-area .area-player .units::-webkit-scrollbar-thumb:horizontal{
-		background: #999;
-	}
-
-        .app .app-area .area-player .each-unit {
-            display: inline-block;
-            width: calc(100%/7);
-            cursor: pointer;
+        .app .app-area .area-player .units {
+            width: 70%;
+            position: absolute;
+            white-space: nowrap;
+            overflow: auto;
             height: 100%;
-            position: relative;
-            text-align: center;
-            overflow: hidden;
-        }
-		
-		.app .app-area .area-player[data-player=white] .each-unit  {
-			padding: 2.4rem 0.8rem 0.6rem 0.8rem;
-		}
-		
-		.app .app-area .area-player[data-player=black] .each-unit  {
-			padding: 0.6rem 0.8rem 2.4rem 0.8rem;
-		}
-
-            .app .app-area .area-player .each-unit * {
-                -webkit-user-select: none;
-                -khtml-user-select: none;
-                -moz-user-select: none;
-                -o-user-select: none;
-                user-select: none;
-            }
-
-            .app .app-area .area-player .each-unit img {
-            }
-		
-			.app .app-area .area-player[data-player=white] .each-unit img[data-rotate='90'] {
-				transform:rotate(-90deg);
-			}
-		
-			.app .app-area .area-player[data-player=black] .each-unit img[data-rotate='90'] {
-				transform:rotate(90deg);
-			}
-
-            .app .app-area .area-player .each-unit div {
-                text-align: center;
-                font-size: 0.9rem;
-                line-height: 1;
-                position: absolute;
-                left: 0;
-                width: 100%;
-            }
-
-        .app .app-area .area-player .status {
-            display: inline-block;
-            font-size: 1.2rem;
-            padding: 0.4rem;
-            height: 100%;
-            width: 30%;
+            -webkit-overflow-scrolling: touch;
         }
 
-            .app .app-area .area-player .status table {
-                width: 100%;
+    .app[data-device=pc] .app-area .area-player .units::-webkit-scrollbar {
+        height: 5px;
+        width: 5px;
+        border: 1px solid #eee;
+        background: #eee;
+    }
+
+    .app[data-device=pc] .app-area .area-player .units::-webkit-scrollbar-thumb:horizontal {
+        background: #999;
+    }
+
+    .app .app-area .area-player .each-unit {
+        display: inline-block;
+        width: calc(100%/7);
+        cursor: pointer;
+        height: 100%;
+        position: relative;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    .app .app-area .area-player[data-player=white] .each-unit {
+        padding: 2.4rem 0.8rem 0.6rem 0.8rem;
+    }
+
+    .app .app-area .area-player[data-player=black] .each-unit {
+        padding: 0.6rem 0.8rem 2.4rem 0.8rem;
+    }
+
+    .app .app-area .area-player .each-unit * {
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+    }
+
+    .app .app-area .area-player .each-unit img {
+    }
+
+    .app .app-area .area-player[data-player=white] .each-unit img[data-rotate='90'] {
+        transform: rotate(-90deg);
+    }
+
+    .app .app-area .area-player[data-player=black] .each-unit img[data-rotate='90'] {
+        transform: rotate(90deg);
+    }
+
+    .app .app-area .area-player .each-unit div {
+        text-align: center;
+        font-size: 0.9rem;
+        line-height: 1;
+        position: absolute;
+        left: 0;
+        width: 100%;
+    }
+
+    .app .app-area .area-player .status {
+        display: inline-block;
+        font-size: 1.2rem;
+        padding: 0.4rem;
+        height: 100%;
+        width: 30%;
+    }
+
+        .app .app-area .area-player .status table {
+            width: 100%;
+        }
+
+            .app .app-area .area-player .status table th {
+                font-size: 1rem;
+                padding-right: 0.5rem;
+                text-align: right;
             }
 
-                .app .app-area .area-player .status table th {
-                    font-size: 1rem;
-                    padding-right: 1rem;
+            .app .app-area .area-player .status table td {
+                text-align: left;
+                font-size: 1rem;
+            }
+
+                .app .app-area .area-player .status table td.button {
                     text-align: right;
                 }
 
-                .app .app-area .area-player .status table td {
-                    text-align: left;
-                    font-size: 1rem;
-                }
-
-                    .app .app-area .area-player .status table td.button {
-                        text-align: right;
-                    }
-
-            .app .app-area .area-player .status button {
-                border: 0;
-                float: right;
-                padding: 1.2rem 0;
-                font-size: 1rem;
-                width: 33px;
-            }
-
-        .app .app-area .area-player[data-player=white] {
-            top: 0;
-            text-align: right;
-            background: #fff;
-            border-bottom: 1px solid #ddd;
+        .app .app-area .area-player .status button {
+            border: 0;
+            float: right;
+            padding: 1.2rem 0;
+            font-size: 1rem;
+            width: 33px;
         }
-		
-		.app .app-area .area-player[data-player=white] .units {
-			right: 0;
-		}
 
-            .app .app-area .area-player[data-player=white] .each-unit {
-                border-right: 0.1rem solid #ddd;
+    .app .app-area .area-player[data-player=white] {
+        top: 0;
+        text-align: right;
+        background: #fff;
+        border-bottom: 1px solid #ddd;
+    }
+
+        .app .app-area .area-player[data-player=white] .units {
+            right: 0;
+        }
+
+        .app .app-area .area-player[data-player=white] .each-unit {
+            border-right: 0.1rem solid #ddd;
+        }
+
+            .app .app-area .area-player[data-player=white] .each-unit:first-child {
+                /*border-right-color: #fff;*/
             }
 
-                .app .app-area .area-player[data-player=white] .each-unit:first-child {
-                    /*border-right-color: #fff;*/
-                }
+            .app .app-area .area-player[data-player=white] .each-unit.active {
+                background: #eee;
+            }
 
-                .app .app-area .area-player[data-player=white] .each-unit.active {
-                    background: #eee;
-                }
-
-                .app .app-area .area-player[data-player=white] .each-unit img {
-                    transform: rotate(180deg);
-                }
-
-                .app .app-area .area-player[data-player=white] .each-unit div {
-                    transform: rotate(180deg);
-                    top: 0.3rem;
-                }
-
-            .app .app-area .area-player[data-player=white] .status {
+            .app .app-area .area-player[data-player=white] .each-unit img {
                 transform: rotate(180deg);
-				float:left;
-                border-left: 1px solid #ddd;
             }
 
-                .app .app-area .area-player[data-player=white] .status button {
-                    background: #000;
-                    color: #fff;
-                }
+            .app .app-area .area-player[data-player=white] .each-unit div {
+                transform: rotate(180deg);
+                top: 0.3rem;
+            }
 
-        .app .app-area .area-player[data-player=black] {
-            bottom: 0;
-            background: #000;
-            border-top: 1px solid #ddd;
+        .app .app-area .area-player[data-player=white] .status {
+            transform: rotate(180deg);
+            float: left;
+            border-left: 1px solid #ddd;
         }
-		
-		.app .app-area .area-player[data-player=black] .units {
-			left: 0;
-		}
 
-            .app .app-area .area-player[data-player=black] .each-unit {
-                border-right: 0.1rem solid #ddd;
-            }
-
-                .app .app-area .area-player[data-player=black] .each-unit.active {
-                    background: #b3b3b3;
-                }
-
-                .app .app-area .area-player[data-player=black] .each-unit div {
-                    color: #fff;
-                    bottom: 0.3rem;
-                }
-
-            .app .app-area .area-player[data-player=black] .status {
+            .app .app-area .area-player[data-player=white] .status button {
+                background: #000;
                 color: #fff;
-                float: right;
             }
 
-                .app .app-area .area-player[data-player=black] .status button {
-                    background: #fff;
-                    color: #000;
-                }
+    .app .app-area .area-player[data-player=black] {
+        bottom: 0;
+        background: #000;
+        border-top: 1px solid #ddd;
+    }
+
+        .app .app-area .area-player[data-player=black] .units {
+            left: 0;
+        }
+
+        .app .app-area .area-player[data-player=black] .each-unit {
+            border-right: 0.1rem solid #ddd;
+        }
+
+            .app .app-area .area-player[data-player=black] .each-unit.active {
+                background: #b3b3b3;
+            }
+
+            .app .app-area .area-player[data-player=black] .each-unit div {
+                color: #fff;
+                bottom: 0.3rem;
+            }
+
+        .app .app-area .area-player[data-player=black] .status {
+            color: #fff;
+            float: right;
+        }
+
+            .app .app-area .area-player[data-player=black] .status button {
+                background: #fff;
+                color: #000;
+            }
 
     .app .pause-area {
         position: absolute;
@@ -540,9 +540,9 @@ button {
         height: 100%;
         background: rgba(0, 0, 0, 0.7);
         padding: 20px;
-		z-index: 100;
-		overflow:auto;
-		-webkit-overflow-scrolling: touch;
+        z-index: 100;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
     }
 
         .app .modal-area .img-part {
@@ -557,18 +557,18 @@ button {
                 width: 120px;
                 height: 120px;
             }
-			
-            .app .modal-area[data-player=white] .img-part span {
-				background:#fff;
-			}
-		
-			.app .modal-area[data-player=black] .img-part span {
-				background:#000;
-			}
-			
-			.app .modal-area .img-part span img[data-rotate='90'] {
-				transform:rotate(90deg);
-			}
+
+        .app .modal-area[data-player=white] .img-part span {
+            background: #fff;
+        }
+
+        .app .modal-area[data-player=black] .img-part span {
+            background: #000;
+        }
+
+        .app .modal-area .img-part span img[data-rotate='90'] {
+            transform: rotate(90deg);
+        }
 
         .app .modal-area .info-part table {
             border-bottom: 1px solid #ddd;
@@ -583,36 +583,36 @@ button {
                 text-align: right;
                 font-weight: 600;
             }
-			
-			.app .modal-area .ride-part {
-				color:#fff;
-			}
-			
-				.app .modal-area .ride-part div {
-					margin: 0 0.5rem 1rem 0.5rem;
-					font-size: 1.2rem;
-				}
-		
-				.app .modal-area .ride-part span {
-					cursor: pointer;
-					display: inline-block;
-					width: 42px;
-					padding: 10px;
-					border-radius: 50px;
-					margin: 5px;
-				}
-		
-		.app .modal-area[data-player=white] .ride-part span {
-			background:#fff;
-		}
-		
-		.app .modal-area[data-player=black] .ride-part span {
-			background:#000;
-		}
-		
-		.app .modal-area .ride-part span img[data-rotate='90'] {
-			transform:rotate(90deg);
-		}
+
+        .app .modal-area .ride-part {
+            color: #fff;
+        }
+
+            .app .modal-area .ride-part div {
+                margin: 0 0.5rem 1rem 0.5rem;
+                font-size: 1.2rem;
+            }
+
+            .app .modal-area .ride-part span {
+                cursor: pointer;
+                display: inline-block;
+                width: 42px;
+                padding: 10px;
+                border-radius: 50px;
+                margin: 5px;
+            }
+
+        .app .modal-area[data-player=white] .ride-part span {
+            background: #fff;
+        }
+
+        .app .modal-area[data-player=black] .ride-part span {
+            background: #000;
+        }
+
+        .app .modal-area .ride-part span img[data-rotate='90'] {
+            transform: rotate(90deg);
+        }
 
         .app .modal-area .close-btn {
             position: absolute;
@@ -634,3 +634,9 @@ button {
         width: 360px;
         height: 720px;
     }
+
+@media(max-width:320px) {
+    .app .app-area .area-player .status table td {
+        letter-spacing: -1px;
+    }
+}
