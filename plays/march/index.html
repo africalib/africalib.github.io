@@ -47,7 +47,7 @@
                         <div class="remain" ng-style="{ width : (a.shelter.hp / a.shelter.maxHp * 100) + '%' }"></div>
                     </div>
                 </div>
-                <div class="weapon" data-direction="{{ a.weapon.direction }}" data-status="{{ a.weapon.status }}" data-name="{{ a.weapon.name }}" ng-if="a.weapon.name" ng-style="a.weapon.style">
+                <div class="weapon" data-direction="{{ a.weapon.direction }}" data-status="{{ a.weapon.status }}" data-name="{{ a.weapon.name }}" ng-if="a.weapon && a.weapon.name" ng-style="a.weapon.style">
                     <img ng-src="img/common/weapon.{{ a.weapon.name }}.png" />
                 </div>
             </div>

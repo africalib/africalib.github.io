@@ -1,9 +1,9 @@
-﻿var app = angular.module('app', []);
+﻿let app = angular.module('app', []);
 app.controller('appCtrl', function ($scope, $timeout, $interval) {
-    var online = {
+    let online = {
         get: function (key, update, func) {
             local.interval[key] = $interval(function () {
-                var args = {
+                let args = {
                     id: global.id,
                     player: global.player,
                     type: 'check',
@@ -12,7 +12,7 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
 
                 $.post('./?ctrl=api&act=check', args, function (res) {
                     if (res) {
-                        var data = JSON.parse(res);
+                        let data = JSON.parse(res);
                         if (data.method) {
                             if (func && typeof func === 'function') {
                                 func();
@@ -44,7 +44,7 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
             }, 500);
         },
         post: function (method, arg1, arg2, arg3) {
-            var args = {
+            let args = {
                 id: global.id,
                 player: global.player,
                 type: 'post',
@@ -58,7 +58,7 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
         }
     }
 
-    var local = {
+    let local = {
         timer: {},
         interval: {},
         touchStart: 0,
@@ -90,8 +90,8 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
 		
 		getIsInShelterOrArea: function(i) {
 			if(local.getIsUnitInArea(i)) {			
-				var eachArea = $scope.areas[i];
-				var eachUnit = eachArea.unit;
+				let eachArea = $scope.areas[i];
+				let eachUnit = eachArea.unit;
 				return eachArea.owner === eachUnit.player || (local.getIsShelterInArea(i) && eachArea.shelter.player === $scope.getPlayer());
 			}
 			
@@ -119,9 +119,9 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
         },
 
         getDirection: function (targetIdx, presentIdx) {
-            var target = $scope.areas[targetIdx];
-            var present = $scope.areas[presentIdx];
-            var returnValue = present.direction;
+            let target = $scope.areas[targetIdx];
+            let present = $scope.areas[presentIdx];
+            let returnValue = present.direction;
 
             if (target.hnum === present.hnum) {
                 if (target.hidx > present.hidx)
@@ -136,8 +136,8 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
                     returnValue = 12;
             }
             else {
-                var hGap = Math.abs(present.hnum - target.hnum);
-                var vGap = Math.abs(present.vnum - target.vnum);
+                let hGap = Math.abs(present.hnum - target.hnum);
+                let vGap = Math.abs(present.vnum - target.vnum);
 
                 if (hGap >= vGap) {
                     if (present.hnum < target.hnum)
@@ -157,11 +157,11 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
         },
 
         getBuff: function () {
-            var buffArr = [];
+            let buffArr = [];
 
-            for (var i in $scope.areas) {
-                var area = $scope.areas[i];
-                var unit = area.unit;
+            for (let i in $scope.areas) {
+                let area = $scope.areas[i];
+                let unit = area.unit;
 
                 if (unit.buff) {
                     i = Number(i);
@@ -197,9 +197,9 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
 
         setAnimate: function (startIdx, endIdx, type, func) {
             if (startIdx !== endIdx) {
-                var startArea = $scope.areas[startIdx];
-                var endArea = $scope.areas[endIdx];
-                var unit = null;
+                let startArea = $scope.areas[startIdx];
+                let endArea = $scope.areas[endIdx];
+                let unit = null;
 				
 				switch(type) {
 					case 'weapon':
@@ -215,7 +215,7 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
 						break;
 				}
 				
-                var $startArea = $('#app .each-area[data-idx=' + startIdx + ']');
+                let $startArea = $('#app .each-area[data-idx=' + startIdx + ']');
                 $scope.status.touchable = false;
                 unit.status = 'move';
 				
@@ -264,15 +264,15 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
 
         setOwner: function (idx, isRunned) {
             if (this.getIsUnitInArea(idx) && $scope.areas[idx].unit.name === 'king') {
-                var kingUnit = $scope.areas[idx].unit;
-                var startIdx = (Math.floor(idx / $scope.default.columNum) * $scope.default.columNum) + ($scope.default.columNum * (kingUnit.player === 'black' ? -1 : 1));
-                var endIdx = startIdx + $scope.default.columNum - 1;
-                var anotherKingIdx = null;
+                let kingUnit = $scope.areas[idx].unit;
+                let startIdx = (Math.floor(idx / $scope.default.columNum) * $scope.default.columNum) + ($scope.default.columNum * (kingUnit.player === 'black' ? -1 : 1));
+                let endIdx = startIdx + $scope.default.columNum - 1;
+                let anotherKingIdx = null;
 
-                for (var i in $scope.areas) {
-                    var eachArea = $scope.areas[i];
-                    var idx = Number(i);
-                    var eachCond = kingUnit.player === 'black' ? idx >= startIdx : idx <= endIdx;
+                for (let i in $scope.areas) {
+                    let eachArea = $scope.areas[i];
+                    let idx = Number(i);
+                    let eachCond = kingUnit.player === 'black' ? idx >= startIdx : idx <= endIdx;
 
                     if (eachCond) {
                         if (!eachArea.owner && !eachArea.ownOnly)
@@ -292,15 +292,15 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
         },
 
         setBuff: function () {
-            var buffArr = this.getBuff();
+            let buffArr = this.getBuff();
 
-            for (var i in $scope.areas) {
+            for (let i in $scope.areas) {
                 if (this.getIsUnitInArea(i)) {
-					var eachArea = $scope.areas[i];
-                    var eachUnit = eachArea.unit;
-                    var inInBuffArr = false;
+					let eachArea = $scope.areas[i];
+                    let eachUnit = eachArea.unit;
+                    let inInBuffArr = false;
 
-                    for (var j in buffArr) {
+                    for (let j in buffArr) {
                         if (Number(i) === Number(buffArr[j].idx) && eachUnit.player === buffArr[j].player) {
                             inInBuffArr = true;
                             break;
@@ -336,21 +336,21 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
         },
 
         setCounterAttack: function () {
-            var isBlackTurn = $scope.status.turn === 'black';
-            var i = isBlackTurn ? $scope.areas.length : 0;
+            let isBlackTurn = $scope.status.turn === 'black';
+            let i = isBlackTurn ? $scope.areas.length : 0;
 
-            var buffArr = this.getBuff();
+            let buffArr = this.getBuff();
 
             while (isBlackTurn ? i > 0 : i < $scope.areas.length) {
-                var idx = Number(i);
-                var eachArea = $scope.areas[idx];
+                let idx = Number(i);
+                let eachArea = $scope.areas[idx];
 
                 if (this.getIsUnitInArea(idx) && eachArea.unit.player !== $scope.status.turn && eachArea.unit.distance && eachArea.unit.power) {
-                    var eachUnit = eachArea.unit;
+                    let eachUnit = eachArea.unit;
 
-                    for (var j = 0; j < eachUnit.distance + eachUnit.buffed['distance']; j += 1) {
-                        var targetIdx = null;
-						var lineCond = false;
+                    for (let j = 0; j < eachUnit.distance + eachUnit.buffed['distance']; j += 1) {
+                        let targetIdx = null;
+						let lineCond = false;
 						
                         switch (eachUnit.direction) {
                             case 12:
@@ -390,9 +390,9 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
                                 });
 
                                 if (eachUnit.through) {
-                                    var attackArr = [];
+                                    let attackArr = [];
 
-                                    for (x = 0; x < eachUnit.distance + eachUnit.buffed['distance']; x += 1) {
+                                    for (let x = 0; x < eachUnit.distance + eachUnit.buffed['distance']; x += 1) {
                                         switch (eachUnit.direction) {
                                             case 12:
                                                 attackArr.push(idx - ($scope.default.columNum * (x + 1)));
@@ -409,7 +409,7 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
                                         }
                                     }
 
-                                    for (var y in attackArr)
+                                    for (let y in attackArr)
                                         this.setAttack(attackArr[y], true, true);
                                 }
                                 else {
@@ -433,14 +433,14 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
         },
 
         setAttack: function (targetIdx, stay, delay, runDistance) {
-            var targetArea = $scope.areas[targetIdx];
-            var activeArea = $scope.areas[$scope.active.idx];
-            var isAlive = true;
+            let targetArea = $scope.areas[targetIdx];
+            let activeArea = $scope.areas[$scope.active.idx];
+            let isAlive = true;
 
             if (((this.getIsShelterInArea(targetIdx) && targetArea.shelter.player !== activeArea.unit.player) || (this.getIsUnitInArea(targetIdx) && targetArea.unit.player !== activeArea.unit.player)) && this.getIsUnitInArea($scope.active.idx)) {
-                var demage = activeArea.unit.attack + activeArea.unit.buffed['attack'];
-				var accelDemage = 0;
-                var activeDirection = this.getDirection(targetIdx, $scope.active.idx);
+                let demage = activeArea.unit.attack + activeArea.unit.buffed['attack'];
+				let accelDemage = 0;
+                let activeDirection = this.getDirection(targetIdx, $scope.active.idx);
 
                 activeArea.unit.direction = activeDirection;
 				
@@ -466,9 +466,9 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
                     }
                 }
                 else {
-                    var critical = 1;
-                    var multi = activeDirection * targetArea.unit.direction;
-                    var defense = 0;
+                    let critical = 1;
+                    let multi = activeDirection * targetArea.unit.direction;
+                    let defense = 0;
 
                     if (targetArea.unit.direction === activeDirection) {
                         critical = 3;
@@ -511,7 +511,7 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
                 }
 
                 $timeout(function () {
-                    for (var i in $scope.areas) {
+                    for (let i in $scope.areas) {
                         if ($scope.areas[i].unit && $scope.areas[i].unit.name && $scope.areas[i].unit.hp <= 0)
                             $scope.areas[i].unit = {};
                         else if ($scope.areas[i].shelter && $scope.areas[i].shelter.name && $scope.areas[i].shelter.hp <= 0)
@@ -526,17 +526,17 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
         },
 		
 		setRandomShelter : function(player, first) {
-			var loopIdx = 0;
-			var shelterCount = 2;
-			var shelterEmptyArr = [];
-			var shelterRandomArr = [];
-			var shelterTimer;
-			var setStopTimer = function() {
+			let loopIdx = 0;
+			let shelterCount = 2;
+			let shelterEmptyArr = [];
+			let shelterRandomArr = [];
+			let shelterTimer;
+			let setStopTimer = function() {
 				$interval.cancel(shelterTimer);
 			}
 			
-			for(var i in $scope.areas) {
-				var eachArea = $scope.areas[i];
+			for(let i in $scope.areas) {
+				let eachArea = $scope.areas[i];
 				if(eachArea.type === 'land' && !local.getIsShelterInArea(i) && !local.getIsUnitInArea(i)) {
 					if(first) {
 						if(player === 'white' ? i >= 50 && i <= 79 : i >= 80 && i <= 109)
@@ -549,8 +549,8 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
 			}
 			
 			if(shelterEmptyArr.length >= shelterCount) {
-				for(var i = 0; i < shelterCount; i += 1) {
-					var randomIdx = appLib.getRandom(0, shelterEmptyArr.length - 1)
+				for(let i = 0; i < shelterCount; i += 1) {
+					let randomIdx = appLib.getRandom(0, shelterEmptyArr.length - 1)
 					shelterRandomArr.push(shelterEmptyArr[randomIdx]);
 					shelterEmptyArr.splice(randomIdx, 1);
 				}
@@ -567,10 +567,10 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
 		},
 		
 		setLevel: function(i) {
-			var eachUnit = $scope.areas[i].unit;
+			let eachUnit = $scope.areas[i].unit;
 		
 			if (eachUnit.name && eachUnit.level && eachUnit.exp >= eachUnit.maxExp && eachUnit.level < eachUnit.maxLevel) {
-				var upLevel = 0;
+				let upLevel = 0;
 
 				while (eachUnit.exp >= eachUnit.maxExp) {
 					if (eachUnit.level >= eachUnit.maxLevel)
@@ -614,23 +614,23 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
 		},
 
         setCheckLevel: function () {
-			for(var i in $scope.areas) {			
+			for(let i in $scope.areas) {			
 				if (this.getIsInShelterOrArea(i))
 					this.setLevel(i);
             }
         },
 
         setShowUp: function (act, idx, val, isImportant) {
-            var visible = val || isImportant;
+            let visible = val || isImportant;
 
             if (act !== 'attack' && global.online && $scope.areas[idx] && $scope.areas[idx].unit && $scope.areas[idx].unit.name)
                 visible = visible && global.player === $scope.areas[idx].unit.player;
 
             if (visible) {
-                var player = global.online ? global.player : $scope.areas[idx].unit.player;
-                var $area = $('#app .each-area[data-hidx=' + idx + ']');
-                var $showUp = null;
-                var obj = { opacity: 0 };
+                let player = global.online ? global.player : $scope.areas[idx].unit.player;
+                let $area = $('#app .each-area[data-hidx=' + idx + ']');
+                let $showUp = null;
+                let obj = { opacity: 0 };
                 $area.find('.show-up').remove();
                 $area.append('<div class="show-up" data-act="' + act + '" data-player="' + player + '">' + val + '</div>');
                 $showUp = $area.find('.show-up');
@@ -647,8 +647,8 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
         },
 
         setMove: function (idx) {
-            var targetArea = $scope.areas[idx];
-            var activeArea = $scope.areas[$scope.active.idx];
+            let targetArea = $scope.areas[idx];
+            let activeArea = $scope.areas[$scope.active.idx];
 
             activeArea.unit.direction = this.getDirection(idx, $scope.active.idx);
             targetArea.unit = activeArea.unit;
@@ -657,7 +657,7 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
         },
 
         setAreaDefault: function () {
-            for (var i in $scope.areas)
+            for (let i in $scope.areas)
                 delete $scope.areas[i].status;
         },
 
@@ -677,8 +677,8 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
 
         setUnit: function (player, name, idx, init) {
             if ($scope.default.units[name]) {
-                var unit = appLib.renew($scope.default.units[name]);
-                var area = $scope.areas[idx];
+                let unit = appLib.renew($scope.default.units[name]);
+                let area = $scope.areas[idx];
 
                 if (init) {
                     unit.power = 0;
@@ -721,23 +721,23 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
         },
 
         setTurn: function (player) {
-            var crop = 0;
-            var buffArr = this.getBuff();
+            let crop = 0;
+            let buffArr = this.getBuff();
 
             $scope.status.turn = player;
             this.setLabel(player, player + ' player turn');
 
-            for (var i in $scope.areas) {
-                var eachArea = $scope.areas[i];
-                var eachUnit = eachArea.unit;
+            for (let i in $scope.areas) {
+                let eachArea = $scope.areas[i];
+                let eachUnit = eachArea.unit;
 
                 if (eachUnit.name) {
 					if(eachUnit.player === player) {
-						var inInBuffArr = false;
-						var restoreHp = 0;
-						var isInShelterOrArea = local.getIsInShelterOrArea(i);
+						let inInBuffArr = false;
+						let restoreHp = 0;
+						let isInShelterOrArea = local.getIsInShelterOrArea(i);
 
-						for (var j in buffArr) {
+						for (let j in buffArr) {
 							if (Number(i) === Number(buffArr[j].idx) && eachUnit.player === buffArr[j].player) {
 								inInBuffArr = true;
 								break;
@@ -763,7 +763,7 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
 
 						// 추가 농작물
 						if (eachUnit.farm) {
-							var each = 0;
+							let each = 0;
 
 							if (player === eachArea.owner) {
 								if (player === 'white')
@@ -788,7 +788,7 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
 						}
 						
 						if(eachUnit.rided.length) {
-							for(var i in eachUnit.rided) {
+							for(let i in eachUnit.rided) {
 								eachUnit.rided[i].hp += eachUnit.rided[i].restoreHp;
 								eachUnit.rided[i].power += eachUnit.rided[i].restorePower;
 								
@@ -823,7 +823,7 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
         },
 
         setAutoRotate: function () {
-            var autoRotates = [{
+            let autoRotates = [{
                 area: $scope.areas[$scope.active.idx - $scope.default.columNum],
                 direction: $scope.areas[$scope.active.idx].unit === 'black' ? 12 : 6
             }, {
@@ -837,15 +837,15 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
                 direction: 3
             }];
 
-            for (var i in autoRotates) {
-                var area = autoRotates[i].area;
+            for (let i in autoRotates) {
+                let area = autoRotates[i].area;
 
                 if (area && area.unit && area.unit.name && this.getIsUnitInArea($scope.active.idx) && area.unit.player !== $scope.areas[$scope.active.idx].unit.player && this.getIsInCross($scope.active.idx, area.idx))
                     area.unit.direction = autoRotates[i].direction;
             }
 
             if (this.autoRotateArr.length) {
-                for (var i in this.autoRotateArr) {
+                for (let i in this.autoRotateArr) {
                     if (this.getIsUnitInArea(this.autoRotateArr[i].idx))
                         $scope.areas[this.autoRotateArr[i].idx].unit.direction = this.autoRotateArr[i].direction;
                 }
@@ -855,7 +855,7 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
         },
 
         setTimer: function (player) {
-            var t = this;
+            let t = this;
             $interval.cancel(local.interval['timer']);
 
             local.interval['timer'] = $interval(function () {
@@ -863,7 +863,7 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
                     $scope.status[player].time -= 1;
                 }
                 else {
-                    var nextPlayer = player === 'white' ? 'black' : 'white';
+                    let nextPlayer = player === 'white' ? 'black' : 'white';
                     appLib.bandMessage($scope.getPlayer(), '유효 시간이 지났습니다.', local.messageTime, !global.online);
                     t.setTurn(nextPlayer);
                     t.setModalClose();
@@ -881,13 +881,13 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
 
         setFinished: function () {
             if (!$scope.status.finished) {
-                var king = {
+                let king = {
                     white: 0,
                     black: 0
                 };
 
-                for (var i in $scope.areas) {
-                    var unit = $scope.areas[i].unit;
+                for (let i in $scope.areas) {
+                    let unit = $scope.areas[i].unit;
 
 					if(unit.name) {
 						if (unit.name === 'king') {
@@ -897,7 +897,7 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
 								break;
 						}
 						else if(unit.rided.length) {
-							for(var j in unit.rided) {
+							for(let j in unit.rided) {
 								if(unit.rided[j].name === 'king') {
 									king[unit.player] += 1;
 
@@ -910,14 +910,14 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
                 }
 
                 if (!king.white || !king.black) {
-                    var winner = !king.white ? 'black' : 'white';
-                    var player = global.online ? global.player : winner;
+                    let winner = !king.white ? 'black' : 'white';
+                    let player = global.online ? global.player : winner;
 
                     this.setLabel(player, winner + ' player won', 0);
                     appLib.bandMessage(player, $scope.getLang('ko', winner) + ' 플레이어가 승리하였습니다. 홈(home) 버튼을 통해 첫 화면으로 이동이 가능합니다.', 0, !global.online);
                     $interval.cancel(local.interval['timer']);
 					
-					for(var i in $scope.areas)
+					for(let i in $scope.areas)
 						$scope.areas[i].owner = winner;
 					
                     $scope.status.finished = true;
@@ -1006,7 +1006,7 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
                 level: 1,
                 maxLevel: 9,
                 exp: 0,
-                maxExp: 3,
+                maxExp: 4,
                 move: 3,
                 maxMove: 6,
                 attack: 4,
@@ -1018,7 +1018,7 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
                 multiple: false,
                 hp: 10,
                 maxHp: 10,
-                crop: 3,
+                crop: 4,
                 power: 1,
 				restorePower: 1,
                 maxPower: 5,
@@ -1041,7 +1041,7 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
                 level: 1,
                 maxLevel: 9,
                 exp: 0,
-                maxExp: 4,
+                maxExp: 5,
                 move: 2,
                 maxMove: 4,
                 attack: 3,
@@ -1053,7 +1053,7 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
                 multiple: false,
                 hp: 5,
                 maxHp: 5,
-                crop: 4,
+                crop: 5,
                 power: 1,
 				restorePower: 1,
                 maxPower: 5,
@@ -1076,7 +1076,7 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
                 level: 1,
                 maxLevel: 9,
                 exp: 0,
-                maxExp: 5,
+                maxExp: 7,
                 move: 1,
                 maxMove: 1,
                 attack: 4,
@@ -1088,7 +1088,7 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
                 multiple: false,
                 hp: 15,
                 maxHp: 15,
-                crop: 5,
+                crop: 7,
                 power: 1,
 				restorePower: 1,
                 maxPower: 5,
@@ -1321,10 +1321,7 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
     $scope.areas = [];
 
     $scope.goHome = function () {
-        location.reload();
-        return;
-
-        var args = {
+        let args = {
             id: global.id,
             kind: 'delete'
         };
@@ -1335,15 +1332,15 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
     }
 	
 	$scope.getReversed = function(obj) {
-        var newObject = {};
-        var keys = [];
+        let newObject = {};
+        let keys = [];
 		
-        for (var key in obj) {
+        for (let key in obj) {
             keys.push(key);
         }
 		
-        for (var i = keys.length - 1; i >= 0; i -= 1) {
-          var value = obj[keys[i]];
+        for (let i = keys.length - 1; i >= 0; i -= 1) {
+          let value = obj[keys[i]];
           newObject[keys[i]]= value;
         }       
 
@@ -1397,9 +1394,9 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
     $scope.getModalInfoProp = function (prop) {
         if ($scope.modal.info.buffed && $scope.modal.info.buffed[prop] !== undefined) {
             if ($scope.modal.info.name) {
-                var unitProp = $scope.modal.info[prop] + $scope.modal.info.buffed[prop];
-                var defaultProp = $scope.default.units[$scope.modal.info.name][prop];
-                var gap = unitProp - defaultProp;
+                let unitProp = $scope.modal.info[prop] + $scope.modal.info.buffed[prop];
+                let defaultProp = $scope.default.units[$scope.modal.info.name][prop];
+                let gap = unitProp - defaultProp;
                 return unitProp + (gap ? ' (+' + gap + ' up)' : '');
             }
         }
@@ -1409,13 +1406,13 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
 	
 	$scope.setDrop = function(rideIdx, ridedIdx, isPosted) {
 		if(local.getIsUnitInArea(rideIdx)) {
-			var rideArea = $scope.areas[rideIdx];
-			var rideUnit = rideArea.unit;
+			let rideArea = $scope.areas[rideIdx];
+			let rideUnit = rideArea.unit;
 			
 			if(rideUnit.ridable && rideUnit.rided.length) {
-				var dropIdx = null;
+				let dropIdx = null;
 				
-				for(var i = 1; i < $scope.default.columNum; i += 1) {
+				for(let i = 1; i < $scope.default.columNum; i += 1) {
 					if(local.getIsUnitInArea(rideIdx - i) && !local.getHasUnit(rideIdx - i)) {
 						appLib.bandMessage($scope.getPlayer(), '유닛을 내릴 수 없습니다.', local.messageTime, !global.online);					
 						return;
@@ -1435,7 +1432,7 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
 					rideUnit.attack = $scope.default.units[rideUnit.name].attack;
 					rideUnit.distance = $scope.default.units[rideUnit.name].distance;
 					
-					for(var i in rideUnit.rided) {
+					for(let i in rideUnit.rided) {
 						if(rideUnit.attack < rideUnit.rided[i].attack)
 							rideUnit.attack = rideUnit.rided[i].attack;
 						
@@ -1471,7 +1468,7 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
 
     $scope.pass = function (player, isPosted) {
         if ($scope.status.turn !== player) {
-			var randomNum = appLib.getRandom(1, 10);
+			let randomNum = appLib.getRandom(1, 10);
 			
 			if(randomNum === 1)
 				local.setRandomShelter(player);
@@ -1486,7 +1483,7 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
     };
 
     $scope.setShelter = function (player, name, idx, isPosted) {
-        var shelter = appLib.renew($scope.default.shelters[name]);
+        let shelter = appLib.renew($scope.default.shelters[name]);
         shelter.player = player;
         $scope.areas[idx].shelter = shelter;
 
@@ -1495,8 +1492,8 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
     };
 
     $scope.touch = function (idx, isPosted) {
-        var targetArea = $scope.areas[idx];
-        var activeArea = $scope.areas[$scope.active.idx];
+        let targetArea = $scope.areas[idx];
+        let activeArea = $scope.areas[$scope.active.idx];
 
         if (!isPosted && global.online)
             online.post('touch', idx);
@@ -1547,30 +1544,30 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
             activeArea = $scope.areas[$scope.active.idx];
 
             if (targetArea.unit.power > 0) {
-                var attackable = targetArea.unit.power >= 1 ? true : false;
-                var movePoint = targetArea.unit.power >= 1 ? targetArea.unit.move + targetArea.unit.buffed['move'] : 1;
+                let attackable = targetArea.unit.power >= 1 ? true : false;
+                let movePoint = targetArea.unit.power >= 1 ? targetArea.unit.move + targetArea.unit.buffed['move'] : 1;
 
-                var accessable = {
+                let accessable = {
                     up: true,
                     down: true,
                     left: true,
                     right: true
                 }
 
-                var getEachCond = function (direction, i) {
+                let getEachCond = function (direction, i) {
                     return accessable[direction] && $scope.areas[i];
                 }
 
-                for (var i = 0; i < movePoint; i += 1) {
-                    var num = {
+                for (let i = 0; i < movePoint; i += 1) {
+                    let num = {
                         up: (i + 1) * -10 + idx,
                         down: (i + 1) * 10 + idx,
                         left: idx - i - 1,
                         right: idx + i + 1
                     };
 
-                    for (var j = 0; j < 4; j += 1) {
-                        var each = {}
+                    for (let j = 0; j < 4; j += 1) {
+                        let each = {}
 
                         switch (j) {
                             case 0:
@@ -1601,10 +1598,10 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
                                 return;
                         }
 
-                        var eachArea = $scope.areas[each.idx];
+                        let eachArea = $scope.areas[each.idx];
 
                         if (each.cond && eachArea) {
-                            var eachUnit = eachArea.unit;
+                            let eachUnit = eachArea.unit;
                             $scope.areas[num[each.direction]].player = $scope.status.turn;
 
                             if (attackable && ((local.getIsShelterInArea(each.idx) && !local.getHasShelter(each.idx)) || (local.getIsUnitInArea(each.idx) && !local.getHasUnit(each.idx) && (activeArea.unit.type === eachUnit.type ? true : activeArea.unit.type === 'sea' ? i === 0 : true))) && targetArea.unit.distance === 1)
@@ -1622,11 +1619,11 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
 
                 if (targetArea.unit.distance > 1) {
                     if (targetArea.unit.multiple) {
-                        var minNum = 0;
-                        var minVerticalNum = targetArea.hnum - (targetArea.unit.distance + targetArea.unit.buffed['distance']);
-                        var maxVerticalNum = targetArea.hnum + (targetArea.unit.distance + targetArea.unit.buffed['distance']);
-                        var minLastNum = idx - (targetArea.unit.distance + targetArea.unit.buffed['distance']) - (targetArea.hnum * 10);
-                        var maxLastNum = idx + (targetArea.unit.distance + targetArea.unit.buffed['distance']) - (targetArea.hnum * 10);
+                        let minNum = 0;
+                        let minVerticalNum = targetArea.hnum - (targetArea.unit.distance + targetArea.unit.buffed['distance']);
+                        let maxVerticalNum = targetArea.hnum + (targetArea.unit.distance + targetArea.unit.buffed['distance']);
+                        let minLastNum = idx - (targetArea.unit.distance + targetArea.unit.buffed['distance']) - (targetArea.hnum * 10);
+                        let maxLastNum = idx + (targetArea.unit.distance + targetArea.unit.buffed['distance']) - (targetArea.hnum * 10);
 
                         if (minVerticalNum < 0)
                             minVerticalNum = 0;
@@ -1634,18 +1631,18 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
                         if (minLastNum < 0)
                             minLastNum = 0;
 
-                        for (var i in $scope.areas) {
-                            var eachVerticalNum = local.getVerticalNum(i);
-                            var eachLastNum = i - (eachVerticalNum * 10);
-                            var eachUnit = $scope.areas[i].unit;
+                        for (let i in $scope.areas) {
+                            let eachVerticalNum = local.getVerticalNum(i);
+                            let eachLastNum = i - (eachVerticalNum * 10);
+                            let eachUnit = $scope.areas[i].unit;
 
                             if (attackable && ((local.getIsShelterInArea(i) && !local.getHasShelter(i)) || (local.getIsUnitInArea(i) && !local.getHasUnit(i))) && eachVerticalNum >= minVerticalNum && eachVerticalNum <= maxVerticalNum && eachLastNum >= minLastNum && eachLastNum <= maxLastNum && !local.getHasShelter(i))
                                 $scope.areas[i].status = 'attack';
                         }
                     }
                     else if (attackable) {
-                        for (var i = 0; i < targetArea.unit.distance + targetArea.unit.buffed['distance']; i += 1) {
-                            var num = {
+                        for (let i = 0; i < targetArea.unit.distance + targetArea.unit.buffed['distance']; i += 1) {
+                            let num = {
                                 up: (i + 1) * -($scope.default.columNum) + idx,
                                 down: (i + 1) * $scope.default.columNum + idx,
                                 right: idx + i + 1,
@@ -1666,7 +1663,7 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
             }
         }
         else if (targetArea.status === 'attack' || targetArea.status === 'move') {
-            var obj = {
+            let obj = {
                 loopArr: [],
                 compare: null,
                 addedNum: 0,
@@ -1682,11 +1679,11 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
                 obj.gap = targetArea.idx - $scope.active.idx;
 
                 if (obj.gap > 0) {
-                    for (var i = $scope.active.idx; i <= obj.gap + $scope.active.idx; i += 1)
+                    for (let i = $scope.active.idx; i <= obj.gap + $scope.active.idx; i += 1)
                         obj.loopArr.push(i);
                 }
                 else {
-                    for (var i = $scope.active.idx; i >= obj.gap + $scope.active.idx; i -= 1)
+                    for (let i = $scope.active.idx; i >= obj.gap + $scope.active.idx; i -= 1)
                         obj.loopArr.push(i);
                 }
             }
@@ -1694,21 +1691,21 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
                 obj.gap = targetArea.idx - $scope.active.idx;
 
                 if (obj.gap > 0) {
-                    for (var i = $scope.active.idx; i <= obj.gap + $scope.active.idx; i += $scope.default.columNum)
+                    for (let i = $scope.active.idx; i <= obj.gap + $scope.active.idx; i += $scope.default.columNum)
                         obj.loopArr.push(i);
                 }
                 else {
-                    for (var i = $scope.active.idx; i >= obj.gap + $scope.active.idx; i -= $scope.default.columNum)
+                    for (let i = $scope.active.idx; i >= obj.gap + $scope.active.idx; i -= $scope.default.columNum)
                         obj.loopArr.push(i);
                 }
             }
 
             if ($scope.areas[$scope.active.idx].unit.distance === 1 || ($scope.areas[$scope.active.idx].unit.distance > 1 && targetArea.status === 'move')) {
-                var teamUnits = [];
+                let teamUnits = [];
 
-                for (var i in obj.loopArr) {
-                    var loopIdx = obj.loopArr[i];
-                    var loopArea = $scope.areas[loopIdx];
+                for (let i in obj.loopArr) {
+                    let loopIdx = obj.loopArr[i];
+                    let loopArea = $scope.areas[loopIdx];
                     activeArea = $scope.areas[$scope.active.idx];
                     activeArea.unit.direction = local.getDirection(idx, $scope.active.idx);
 
@@ -1725,7 +1722,7 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
                                 $scope.active.idx = loopIdx;
                             }
                             else if (local.setAttack(loopIdx, false, i > 1, i)) {
-                                var removeIdx = obj.loopArr.indexOf(loopIdx);
+                                let removeIdx = obj.loopArr.indexOf(loopIdx);
                                 obj.loopArr.splice(removeIdx, obj.loopArr.length - removeIdx);
                                 break;
                             }
@@ -1743,12 +1740,12 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
 				
 				teamUnits.reverse();
 
-                for (var i in teamUnits) {
+                for (let i in teamUnits) {
                     if (local.getIsUnitInArea(teamUnits[i].idx)) {
                         var objArr = appLib.renew(obj.loopArr);
 						objArr.reverse();
 
-                        for (var j in objArr) {
+                        for (let j in objArr) {
                             if (!local.getIsUnitInArea(objArr[j])) {
                                 $scope.areas[objArr[j]].unit = teamUnits[i].unit;
                                 break;
@@ -1777,16 +1774,16 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
 				};
 
 				if (activeArea.unit.through) {
-					for (var i in obj.loopArr) {
+					for (let i in obj.loopArr) {
 						if(i > 0 && !local.getIsMine(obj.loopArr[i])) {
-							var targetDirection = local.getDirection($scope.active.idx, obj.loopArr[i]);
+							let targetDirection = local.getDirection($scope.active.idx, obj.loopArr[i]);
 							local.setAttack(obj.loopArr[i], false, true);
 							local.autoRotateArr.push({ idx: obj.loopArr[i], direction: targetDirection })
 						}
 					}
 				}
 				else {
-					var targetDirection = local.getDirection($scope.active.idx, idx);
+					let targetDirection = local.getDirection($scope.active.idx, idx);
 					local.setAttack(idx, false, true);
 					local.autoRotateArr.push({ idx: idx, direction: targetDirection })
 				}
@@ -1834,8 +1831,8 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
             $interval.cancel(local.interval['initLoopCheck']);
 
         if (!$scope.status.started) {
-            var isShelterSettable = false;
-            var mc = new Hammer(document.querySelector('body'));
+            let isShelterSettable = false;
+            let mc = new Hammer(document.querySelector('body'));
 
             $scope.status.started = true;
             $scope.status.paused = false;
@@ -1887,11 +1884,11 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
 			});
 			
             mc.on('press', function (e) {
-                var eachArea = $(e.target).closest('.each-area');
-                var eachUnit = $(e.target).closest('.each-unit');
+                let eachArea = $(e.target).closest('.each-area');
+                let eachUnit = $(e.target).closest('.each-unit');
 
                 if (eachArea.length && eachArea.data('idx')) {
-                    var idx = eachArea.data('idx');
+                    let idx = eachArea.data('idx');
 					$scope.modal.idx = idx;
 
                     if ($scope.areas[idx] && local.getIsShelterInArea(idx)) {
@@ -1963,16 +1960,16 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
 
     $scope.grab = function (player, name, isPosted) {
         if ($scope.status.turn === player) {
-            var unit = $scope.default.units[name];
-            var fieldCount = 0;
+            let unit = $scope.default.units[name];
+            let fieldCount = 0;
 
-            for (var i in $scope.areas) {
+            for (let i in $scope.areas) {
                 if ($scope.areas[i].unit.player === player) {
 					if($scope.areas[i].unit.name === name)
 						fieldCount += 1;
 			
 					if($scope.areas[i].unit.rided.length) {
-						for(var j in $scope.areas[i].unit.rided) {
+						for(let j in $scope.areas[i].unit.rided) {
 							if($scope.areas[i].unit.rided[j].name === name)
 								fieldCount += 1;
 						}
@@ -2000,8 +1997,8 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
 
             $scope.grabbed.name = name;
 
-            for (var i in $scope.areas) {
-                var area = $scope.areas[i];
+            for (let i in $scope.areas) {
+                let area = $scope.areas[i];
                 if (!area.unit.name && unit.type === area.type && (!local.getIsShelterInArea(i) || local.getHasShelter(i))) {
                     switch (player) {
                         case 'white':
@@ -2036,10 +2033,10 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
         $scope.label.message = "let's march";
         $scope.device = appLib.isMobileDevice() ? 'mobile' : 'pc';
 
-        for (var i = 0; i < 160; i += 1) {
-            var each = appLib.renew($scope.default.area);
-            var remain = i % $scope.default.columNum;
-            var hnum = local.getVerticalNum(i);
+        for (let i = 0; i < 160; i += 1) {
+            let each = appLib.renew($scope.default.area);
+            let remain = i % $scope.default.columNum;
+            let hnum = local.getVerticalNum(i);
 
             each.idx = i;
             each.hidx = i;
