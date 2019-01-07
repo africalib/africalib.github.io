@@ -1,4 +1,5 @@
-﻿let app = angular.module('app', []);
+﻿'use strict';
+let app = angular.module('app', []);
 app.controller('appCtrl', function ($scope, $timeout, $interval) {
     let online = {
         get: function (key, update, func) {
@@ -338,8 +339,6 @@ app.controller('appCtrl', function ($scope, $timeout, $interval) {
         setCounterAttack: function () {
             let isBlackTurn = $scope.status.turn === 'black';
             let i = isBlackTurn ? $scope.areas.length : 0;
-
-            let buffArr = this.getBuff();
 
             while (isBlackTurn ? i > 0 : i < $scope.areas.length) {
                 let idx = Number(i);
