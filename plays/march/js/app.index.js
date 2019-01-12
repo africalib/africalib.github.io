@@ -986,7 +986,7 @@
                         t.modal.idx = idx;
 
                         if (t.areas[idx] && t.getIsShelterInArea(idx)) {
-                            if (t.getPlayer() === t.areas[idx].shelter.player && this.areas[idx].unit && this.areas[idx].unit.name) {
+                            if (t.getPlayer() === t.areas[idx].shelter.player && t.areas[idx].unit && t.areas[idx].unit.name) {
                                 t.modal.info = t.areas[idx].unit;
                                 t.modal.type = 'unit';
                             }
