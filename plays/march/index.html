@@ -42,7 +42,7 @@
                         <div class="remain" v-bind:style="{ width : (a.shelter.hp / a.shelter.maxHp * 100) + '%' }"></div>
                     </div>
                 </div>
-                <div class="weapon" v-bind:data-direction="a.weapon.direction" v-bind:data-status="a.weapon.status" v-bind:data-name="a.weapon.name" v-if="a.weapon && a.weapon.name" v-bind:style="a.weapon.style" v-bind:alpha="JSON.stringify(a.weapon.style)">
+                <div class="weapon" v-bind:data-direction="a.weapon.direction" v-bind:data-status="a.weapon.status" v-bind:data-name="a.weapon.name" v-if="a.weapon && a.weapon.name" v-bind:style="a.weapon.style">
                     <img v-bind:src="'img/common/weapon.' + a.weapon.name + '.png'" />
                 </div>
             </div>
