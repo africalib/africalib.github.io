@@ -21,7 +21,7 @@ button {
     width: 100%;
     height: 100%;
     margin: 0 auto;
-    display: none;
+    /* display: none; */
 }
 
     .app .app-area {
@@ -68,7 +68,7 @@ button {
                     .app .app-area .area-wrapper .each-area .unit[data-status=move],
                     .app .app-area .area-wrapper .each-area .weapon[data-status=move] {
                         transition: top 0.2s, left 0.2s;
-                        -webkit-transition: top 0.2s, left 0.2s; /* Safari */
+                        -webkit-transition: top 0.2s, left 0.2s;
                         z-index: 1;
                     }
 
@@ -633,6 +633,10 @@ button {
     .app[data-device=pc] {
         width: 360px;
         height: 720px;
+    }
+
+    .app[v-cloak] {
+        display: none;
     }
 
 @media(max-width:320px) {
