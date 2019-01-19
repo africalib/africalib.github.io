@@ -2,7 +2,6 @@
     el: '#app',
     data: {
         base: {
-            crop: 10,
             maxCrop: 30,
             time: 120,
             fieldCount: 10,
@@ -92,8 +91,8 @@
                     maxDistance: 1,
                     through: false,
                     multiple: false,
-                    hp: 10,
-                    maxHp: 10,
+                    hp: 8,
+                    maxHp: 8,
                     crop: 3,
                     power: 1,
                     restorePower: 1,
@@ -392,6 +391,7 @@
             droppable: true,
             white: {
                 crop: 0,
+                incomeCrop: 10,
                 maxCrop: 0,
                 time: 0,
                 units: 0,
@@ -399,6 +399,7 @@
             },
             black: {
                 crop: 0,
+                incomeCrop: 10,
                 maxCrop: 0,
                 time: 0,
                 units: 0,
@@ -421,6 +422,9 @@
     },
     methods: {
         goHome: function () {
+            location.reload();
+            return;
+
             let args = {
                 id: global.id,
                 kind: 'delete'
@@ -859,12 +863,12 @@
                         delete t.areas[obj.endIdx]['weapon'];
                     }
 
-                    t.areas[obj.endIdx]['weapon'] = {
+                    t.$set(t.areas[obj.endIdx], 'weapon', {
                         name: activeArea.unit.weapon,
                         direction: t.getDirection(idx, t.active.idx),
                         status: null,
                         style: {}
-                    };
+                    });
 
                     if (activeArea.unit.through) {
                         for (let i in obj.loopArr) {
@@ -883,7 +887,6 @@
                 }
 
                 t.areas[t.active.idx].unit.power -= obj.powerUse;
-
                 t.setAreaDefault();
 
                 t.setAnimate(obj.startIdx, obj.endIdx, obj.aniType, function () {
@@ -1222,6 +1225,7 @@
                 let startArea = t.areas[startIdx];
                 let endArea = t.areas[endIdx];
                 let unit = null;
+                let $startArea = $('#app .each-area[data-idx=' + startIdx + ']');
 
                 switch (type) {
                     case 'weapon':
@@ -1237,7 +1241,6 @@
                         break;
                 }
 
-                let $startArea = $('#app .each-area[data-idx=' + startIdx + ']');
                 t.status.touchable = false;
                 unit.status = 'move';
                 t.$set(unit, 'style', { top: 0, left: 0 });
@@ -1249,7 +1252,7 @@
                         setTimeout(function () {
                             unit.status = null;
                             unit.style = {};
-                            targetArea.status.touchable = true;
+                            t.status.touchable = true;
 
                             if (typeof func === 'function')
                                 func();
@@ -1397,12 +1400,12 @@
                             t.active.idx = idx;
 
                             if (eachUnit.distance > 1) {
-                                t.areas[targetIdx]['weapon'] = {
+                                t.$set(t.areas[targetIdx], 'weapon', {
                                     name: eachUnit.weapon,
                                     direction: eachUnit.direction,
                                     status: null,
                                     style: {}
-                                };
+                                });
 
                                 t.setAnimate(idx, targetIdx, 'weapon', function () {
                                     delete t.areas[targetIdx]['weapon'];
@@ -1629,6 +1632,7 @@
                     eachUnit.restoreHp += 1;
 
                     if (eachUnit.name === 'king') {
+                        this.status[eachUnit.player].incomeCrop += 1;
                         this.status[eachUnit.player].maxCrop += 10;
                         this.status[eachUnit.player].maxUnit += 100;
                     }
@@ -1839,7 +1843,7 @@
                 appLib.bandMessage(this.getPlayer(), this.getLang('ko', player) + ' 플레이어에게 턴을 넘겼습니다.', this.messageTime, !global.online);
 
             crop = parseFloat(crop).toFixed(2);
-            this.status[player].crop = (parseFloat(this.status[player].crop) + parseFloat(this.base.crop) + parseFloat(crop)).toFixed(2);
+            this.status[player].crop = (parseFloat(this.status[player].crop) + parseFloat(this.status[player].incomeCrop) + parseFloat(crop)).toFixed(2);
             this.status[player].crop = Number(this.status[player].crop.toString());
             this.status[player].time = this.base.time;
 
@@ -1942,7 +1946,7 @@
                     let player = global.online ? global.player : winner;
 
                     this.setLabel(player, winner + ' player won', 0);
-                    appLib.bandMessage(player, this.getLang('ko', winner) + ' 플레이어가 승리하였습니다. 홈(home) 버튼을 통해 첫 화면으로 이동이 가능합니다.', 0, !global.online);
+                    appLib.bandMessage(player, this.getLang('ko', winner) + ' 플레이어가 승리하였습니다. 홈(home) 버튼을 통해 새로고침이 가능합니다.', 0, !global.online);
                     clearInterval(this.interval['timer']);
 
                     for (let i in this.areas)
