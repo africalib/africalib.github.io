@@ -84,15 +84,15 @@
                     maxExp: 3,
                     move: 3,
                     maxMove: 6,
-                    attack: 4,
+                    attack: 5,
                     accel: false,
                     defense: 0,
                     distance: 1,
                     maxDistance: 1,
                     through: false,
                     multiple: false,
-                    hp: 8,
-                    maxHp: 8,
+                    hp: 7,
+                    maxHp: 7,
                     crop: 3,
                     power: 1,
                     restorePower: 1,
@@ -1479,10 +1479,10 @@
                         t.setShowUp('attack', targetIdx, demage, true);
                     }, delay ? t.transTime : 0);
 
-                    if (targetArea.shelter.hp < 1)
+                    if (targetArea.shelter.hp <= 0)
                         activeArea.unit.destory += 1;
 
-                    if (targetArea.shelter.hp < 1 && activeArea.unit.distance < 2 && !t.getIsUnitInArea(targetIdx)) {
+                    if (targetArea.shelter.hp <= 0 && activeArea.unit.distance < 2 && !t.getIsUnitInArea(targetIdx)) {
                         targetArea.unit = appLib.renew(activeArea.unit);
                         activeArea.unit = {};
                         t.active.idx = targetIdx;
@@ -1511,12 +1511,12 @@
                     targetArea.unit.hp -= demage;
                     isAlive = targetArea.unit.hp > 0;
 
-                    if (activeArea.unit.hp < 1) {
+                    if (activeArea.unit.hp <= 0) {
                         activeArea.unit.hp = 0;
                         targetArea.unit.exp += activeArea.unit.crop + activeArea.unit.level;
                     }
 
-                    if (targetArea.unit.hp < 1) {
+                    if (targetArea.unit.hp <= 0) {
                         targetArea.unit.hp = 0;
                         activeArea.unit.exp += targetArea.unit.crop + targetArea.unit.level;
                         activeArea.unit.destory += 1;
