@@ -224,7 +224,7 @@
                     </tbody>
                 </table>
             </div>
-			<div class="ride-part" v-if="modal.info.rided.length">
+			<div class="ride-part" v-if="modal && modal.info && modal.info.rided && modal.info.rided.length">
 				<div>{{ getLang('ko', 'ride') }}</div>
 				<span v-for="( r, idx) in modal.info.rided" v-on:click="status.turn === modal.info.player && getPlayer() === modal.info.player && status.droppable && setDrop(modal.idx, idx)">
 					<img v-bind:src="'img/' + modal.info.player + '/' + r.name + '.png'" v-bind:data-rotate="r.rotate" />
