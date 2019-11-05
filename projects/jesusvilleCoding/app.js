@@ -162,7 +162,7 @@
                     data: JSON.stringify(this.make.scenario)
                 };
 
-                $.post('http://jesusville.or.kr/API/scenario/', args, function (res) {
+                $.post('https://jesusvillech.cafe24.com/API/scenario/', args, function (res) {
                     if (res === 'success') {
                         alert('저장하였습니다.');
                         location.href = './';
@@ -238,7 +238,7 @@
                     id: id
                 };
 
-                $.post('http://jesusville.or.kr/API/scenario/', args, function (res) {
+                $.post('https://jesusvillech.cafe24.com/API/scenario/', args, function (res) {
                     if (res === 'success') {
                         alert('삭제하였습니다.');
                         location.href = './';
@@ -622,7 +622,7 @@
             t.watch();
         };
 
-        $.get('http://jesusville.or.kr/API/scenario/', args, function (res) {
+        $.get('https://jesusvillech.cafe24.com/API/scenario/', args, function (res) {
             if (res) {
                 try {
                     var arr = JSON.parse(res);
