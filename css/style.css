@@ -5,7 +5,7 @@ body {
 .items {
     background: #fffffe;
     border: 1px solid #ddd;
-    width: 991px;
+    max-width: 991px;
 }
 
 .items a {
