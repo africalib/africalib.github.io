@@ -2,14 +2,14 @@ body {
     background-color: #f7f7f7;
 }
 
+body a {
+    line-break: anywhere;
+}
+
 .items {
     background: #fffffe;
     border: 1px solid #ddd;
     max-width: 991px;
-}
-
-.items a {
-    line-break: anywhere;
 }
 
 .items > .head {
