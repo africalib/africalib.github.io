@@ -18,7 +18,7 @@ body a {
 }
 
 .items > .head > img {
-    max-width: 300px;
+    width: 200px;
 }
 
 .items > .head > hr {
