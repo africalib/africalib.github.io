@@ -1,0 +1,11 @@
+body {
+    background-color: var(--color-background);
+}
+
+body a {
+    line-break: anywhere;
+}
+
+.container {
+    max-width: 768px;
+}
