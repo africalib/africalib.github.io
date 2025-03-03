@@ -1,1 +1,0 @@
-import{_ as s,a,d as r,o as c}from"./index-_On02brT.js";const o={},t={class:"search"};function d(n,e){return c(),a("div",t,e[0]||(e[0]=[r("div",{class:"wrapper"}," 준비 중입니다. ",-1)]))}const f=s(o,[["render",d],["__scopeId","data-v-890bd24f"]]);export{f as default};
