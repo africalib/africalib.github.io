@@ -1,1 +1,0 @@
-import{_ as a,a as s,d as r,o as c}from"./index-C-yxF6OR.js";const o={},t={class:"search"};function n(_,e){return c(),s("div",t,e[0]||(e[0]=[r("div",{class:"wrapper"}," 준비 중입니다. ",-1)]))}const p=a(o,[["render",n],["__scopeId","data-v-6a19ae96"]]);export{p as default};
