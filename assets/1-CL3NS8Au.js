@@ -1,4 +1,4 @@
-import{a as l,o as i,e as n,p as t,F as s}from"./index-Dh_qpy9v.js";const p={},m=`<p>라우터는 현재 URL에 맞는 컴포넌트를 연결해주는 녀석입니다. 예를 들어, 사용자가 로그인 URL로 접속하면 로그인 컴포넌트를 연결하고요, 장바구니 URL로 접속하면 장바구니 컴포넌트를 연결해주는 것이죠. 마치 영화 감독이 상황에 따라 어떤 장면을 촬영할 것인지 결정하는 것과 비슷합니다. 라우터 코드를 통해 더 구체적으로 살펴볼까요?</p>
+import{a as l,o as i,e as n,p as t,F as s}from"./index-DNTARVfV.js";const p={},m=`<p>라우터는 현재 URL에 맞는 컴포넌트를 연결해주는 녀석입니다. 예를 들어, 사용자가 로그인 URL로 접속하면 로그인 컴포넌트를 연결하고요, 장바구니 URL로 접속하면 장바구니 컴포넌트를 연결해주는 것이죠. 마치 영화 감독이 상황에 따라 어떤 장면을 촬영할 것인지 결정하는 것과 비슷합니다. 라우터 코드를 통해 더 구체적으로 살펴볼까요?</p>
 <pre><code class="language-js">import Home from '../views/Home.vue';
 
 const router = createRouter({
