@@ -1,4 +1,4 @@
-import{a as p,o as l,e as t,f as o,p as r,F as u}from"./index-BQLmNG6Y.js";const i={},m=`<p>라우터는 URL과 컴포넌트를 연결해주는 역할을 합니다. 예를 들어 사용자가 로그인 URL로 접속하면 로그인 컴포넌트를 연결하고, 장바구니 URL로 접속하면 장바구니 컴포넌트를 연결해주는 것이죠. 마치 영화 감독이 상황에 따라 어떤 장면을 촬영할 건지 결정하는 것과 비슷합니다.</p>
+import{a as p,o as l,e as t,f as o,p as r,F as u}from"./index-sqWljEKv.js";const i={},m=`<p>라우터는 사용자의 요청과 컴포넌트를 연결해주는 역할을 합니다. 예를 들어 사용자가 로그인 URL로 접속하면 로그인 컴포넌트를 연결하고, 장바구니 URL로 접속하면 장바구니 컴포넌트를 연결해주는 것이죠. 마치 영화 감독이 상황에 따라 어떤 장면을 촬영할 건지 결정하는 것과 비슷합니다.</p>
 <p><img src="/assets/posts/1/meme1.png" alt="김연경 밈">
 <em>장바구니 화면 띄우라고</em></p>
 <p>아래 <code>src/router/index.js</code> 파일의 코드를 통해 더 구체적으로 살펴볼까요?</p>
@@ -116,7 +116,7 @@ main {
 },
 </code></pre>
 <p>이렇게 해서 라우터에 대해 알아봤습니다.</p>
-`,c=`라우터는 URL과 컴포넌트를 연결해주는 역할을 합니다. 예를 들어 사용자가 로그인 URL로 접속하면 로그인 컴포넌트를 연결하고, 장바구니 URL로 접속하면 장바구니 컴포넌트를 연결해주는 것이죠. 마치 영화 감독이 상황에 따라 어떤 장면을 촬영할 건지 결정하는 것과 비슷합니다.\r
+`,c=`라우터는 사용자의 요청과 컴포넌트를 연결해주는 역할을 합니다. 예를 들어 사용자가 로그인 URL로 접속하면 로그인 컴포넌트를 연결하고, 장바구니 URL로 접속하면 장바구니 컴포넌트를 연결해주는 것이죠. 마치 영화 감독이 상황에 따라 어떤 장면을 촬영할 건지 결정하는 것과 비슷합니다.\r
 \r
 ![김연경 밈](/assets/posts/1/meme1.png)\r
 *장바구니 화면 띄우라고*\r
@@ -231,7 +231,7 @@ routes: [ // 연결 경로\r
 },\r
 \`\`\`\r
 \r
-이렇게 해서 라우터에 대해 알아봤습니다.`;function s(n,e){return l(),p(u,null,[e[0]||(e[0]=t("p",null,"라우터는 URL과 컴포넌트를 연결해주는 역할을 합니다. 예를 들어 사용자가 로그인 URL로 접속하면 로그인 컴포넌트를 연결하고, 장바구니 URL로 접속하면 장바구니 컴포넌트를 연결해주는 것이죠. 마치 영화 감독이 상황에 따라 어떤 장면을 촬영할 건지 결정하는 것과 비슷합니다.",-1)),e[1]||(e[1]=t("p",null,[t("img",{src:"/assets/posts/1/meme1.png",alt:"김연경 밈"}),t("em",null,"장바구니 화면 띄우라고")],-1)),e[2]||(e[2]=t("p",null,[r("아래 "),t("code",null,"src/router/index.js"),r(" 파일의 코드를 통해 더 구체적으로 살펴볼까요?")],-1)),e[3]||(e[3]=t("pre",null,[t("code",{class:"language-js","v-pre":"true"},`import { createRouter, createWebHistory } from 'vue-router';
+이렇게 해서 라우터에 대해 알아봤습니다.`;function s(n,e){return l(),p(u,null,[e[0]||(e[0]=t("p",null,"라우터는 사용자의 요청과 컴포넌트를 연결해주는 역할을 합니다. 예를 들어 사용자가 로그인 URL로 접속하면 로그인 컴포넌트를 연결하고, 장바구니 URL로 접속하면 장바구니 컴포넌트를 연결해주는 것이죠. 마치 영화 감독이 상황에 따라 어떤 장면을 촬영할 건지 결정하는 것과 비슷합니다.",-1)),e[1]||(e[1]=t("p",null,[t("img",{src:"/assets/posts/1/meme1.png",alt:"김연경 밈"}),t("em",null,"장바구니 화면 띄우라고")],-1)),e[2]||(e[2]=t("p",null,[r("아래 "),t("code",null,"src/router/index.js"),r(" 파일의 코드를 통해 더 구체적으로 살펴볼까요?")],-1)),e[3]||(e[3]=t("pre",null,[t("code",{class:"language-js","v-pre":"true"},`import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '../views/HomeView.vue';
 
 const router = createRouter({ // 라우터 객체 생성
