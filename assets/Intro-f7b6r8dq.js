@@ -1,1 +1,0 @@
-import{_ as o,c as t,a as n,o as s}from"./index-YoSUVyRC.js";const c={},r={class:"intro"};function a(_,e){return s(),t("div",r,e[0]||(e[0]=[n("h1",null,"AFRICALIB Introduction",-1)]))}const i=o(c,[["render",a],["__scopeId","data-v-1ecebb84"]]);export{i as default};

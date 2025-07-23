@@ -1,0 +1,1 @@
+import{_ as o,c as s,a as n,o as t}from"./index-zHUschAT.js";const a={},c={class:"login"};function r(_,e){return t(),s("div",c,e[0]||(e[0]=[n("h1",null,"Login",-1)]))}const i=o(a,[["render",r],["__scopeId","data-v-38b050e9"]]);export{i as default};

@@ -1,1 +1,0 @@
-import{_ as o,c as s,a as t,o as a}from"./index-YoSUVyRC.js";const c={},n={class:"home"};function r(_,e){return a(),s("div",n,e[0]||(e[0]=[t("h1",null,"Hello, Home",-1)]))}const l=o(c,[["render",r],["__scopeId","data-v-508019d9"]]);export{l as default};

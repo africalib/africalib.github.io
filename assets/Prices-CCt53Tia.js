@@ -1,1 +1,0 @@
-import{_ as s,c,a as r,o}from"./index-YoSUVyRC.js";const t={},a={class:"prices"};function n(_,e){return o(),c("div",a,e[0]||(e[0]=[r("h1",null,"Service Prices",-1)]))}const d=s(t,[["render",n],["__scopeId","data-v-2bb5824a"]]);export{d as default};
