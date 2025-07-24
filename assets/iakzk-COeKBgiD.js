@@ -1,0 +1,1 @@
+const r={},c="",s="";function t(e,o){return null}const n={render:t};n.__hmrId="C:/J/repositories/africalib/src/data/courses/qkmqd/sections/iakzk.md";const i=e=>({components:e,render:t});export{n as VueComponent,i as VueComponentWith,r as attributes,c as html,s as markdown};
