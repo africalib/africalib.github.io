@@ -1,1 +1,0 @@
-import{_ as o,c,a as s,o as n}from"./index-T_z21QJ8.js";const t={},a={class:"login"};function r(_,e){return n(),c("div",a,e[0]||(e[0]=[s("h1",null,"Login",-1)]))}const i=o(t,[["render",r],["__scopeId","data-v-c2bc9ceb"]]);export{i as default};
