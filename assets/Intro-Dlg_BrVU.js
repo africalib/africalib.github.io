@@ -1,0 +1,1 @@
+import{_ as t,c as e,a as c,o as n}from"./index-DKHQZX0G.js";const s={},r={class:"intro"};function a(_,o){return n(),e("div",r,o[0]||(o[0]=[c("h1",null,"AFRICALIB Introduction",-1)]))}const f=t(s,[["render",a],["__scopeId","data-v-b6c8c15f"]]);export{f as default};

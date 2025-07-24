@@ -1,0 +1,1 @@
+import{_ as s,c as e,a as o,o as c}from"./index-DKHQZX0G.js";const a={},n={class:"contacts"};function r(_,t){return c(),e("div",n,t[0]||(t[0]=[o("h1",null,"Contact Us",-1)]))}const l=s(a,[["render",r],["__scopeId","data-v-5b95bd90"]]);export{l as default};

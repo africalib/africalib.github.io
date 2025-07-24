@@ -1,0 +1,1 @@
+import{_ as s,c,a as r,o}from"./index-DKHQZX0G.js";const t={},a={class:"prices"};function n(_,e){return o(),c("div",a,e[0]||(e[0]=[r("h1",null,"Service Prices",-1)]))}const d=s(t,[["render",n],["__scopeId","data-v-81306af8"]]);export{d as default};
