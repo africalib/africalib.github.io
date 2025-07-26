@@ -1,1 +1,0 @@
-import{S as e}from"./Soon-Cc0QYCT7.js";import{f as s,c as t,b as o,d as a,o as c,_ as n}from"./index-bXggbGcU.js";const _={class:"login"},r={class:"container"},d={class:"wrapper"},i=s({__name:"Login",setup(p){return(f,l)=>(c(),t("div",_,[o("div",r,[o("div",d,[a(e)])])]))}}),u=n(i,[["__scopeId","data-v-d48f2562"]]);export{u as default};
