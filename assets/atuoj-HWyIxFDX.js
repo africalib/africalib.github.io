@@ -1,4 +1,4 @@
-import{c as n,o as r,b as t,F as a}from"./index-DgIuEmT7.js";const i={},u=`<p><img src="/assets/sections/atuoj/hello.svg" alt="인사"></p>
+import{c as n,o as r,b as t,F as a}from"./index-CKmZEfa1.js";const i={},u=`<p><img src="/assets/sections/atuoj/hello.svg" alt="인사"></p>
 <p>안녕하세요? 아프리카에 도서관을 짓는 것이 꿈인 개발자 최진입니다. 유튜브의 &lt;아프리카도서관&gt; 채널을 통해 프로그래밍과 관련된 내용을 공유하고 있습니다.</p>
 `,m=`![인사](/assets/sections/atuoj/hello.svg)\r
 \r
