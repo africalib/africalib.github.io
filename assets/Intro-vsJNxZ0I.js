@@ -1,0 +1,1 @@
+import{S as e}from"./Soon-CEVSOPIq.js";import{f as s,c as t,b as o,d as a,o as c,_ as n}from"./index-CXgJ3kG4.js";const r={class:"intro"},_={class:"container"},d={class:"wrapper"},i=s({__name:"Intro",setup(p){return(f,m)=>(c(),t("div",r,[o("div",_,[o("div",d,[a(e)])])]))}}),u=n(i,[["__scopeId","data-v-b51193f9"]]);export{u as default};
