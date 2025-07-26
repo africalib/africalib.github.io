@@ -1,0 +1,1 @@
+import{f as s,c as a,b as o,o as c,_ as n}from"./index-rSCZ-ztE.js";const l={class:"thumbnail"},r=["src","alt"],_=s({__name:"Thumbnail",props:{url:{},title:{}},setup(e){const t=e;return(i,p)=>(c(),a("div",l,[o("img",{src:t.url||"",alt:`${t.title} 썸네일`,loading:"lazy"},null,8,r)]))}}),m=n(_,[["__scopeId","data-v-b09dd6b8"]]);export{m as T};
