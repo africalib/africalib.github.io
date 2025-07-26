@@ -1,0 +1,1 @@
+import{f as o,c as t,b as c,o as a,_ as r}from"./index-DhUjy1vJ.js";const n={class:"course-thumb"},_=["src","alt"],u=o({__name:"CourseThumb",props:{course:{}},setup(s){const e=s;return(l,m)=>(a(),t("div",n,[c("img",{src:e.course.thumb||"",alt:`${e.course.title} 썸네일`,loading:"lazy"},null,8,_)]))}}),d=r(u,[["__scopeId","data-v-12ade537"]]);export{d as C};
