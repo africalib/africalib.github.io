@@ -1,4 +1,4 @@
-import{c as l,o as n,b as r,e as t,F as e}from"./index-VjoXeHHb.js";const c={},u=`<img src="/assets/sections/atuoj/hello.svg" class="w-50" alt="인사" />
+import{c as l,o as n,b as r,e as t,F as e}from"./index-YvIWiMrf.js";const c={},u=`<img src="/assets/sections/atuoj/hello.svg" class="w-50" alt="인사" />
 <p><strong>우분투: 네가 있어 내가 있다.</strong><br>
 이 말은 남아프리카공화국의 반투어로, 내가 스스로 존재하는 것이 아니라 타인과의 관계 속에서 함께 존재한다는 가치관이 담긴 말입니다. 저는 이러한 가치관을 바탕으로 아프리카에 도서관을 짓고, 그곳에서 아이들을 교육하는 비전이 있는 개발자 최진입니다.</p>
 <p>그리고 유튜브의 <a href="https://www.youtube.com/@africalibrary21" target="_blank">&lt;아프리카도서관&gt;</a>이라는 채널을 운영하고 있습니다.<br>
