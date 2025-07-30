@@ -1,4 +1,4 @@
-import{a as n}from"./index-D8Rv2mXa.js";const o={},v=`<img src="/assets/courses/qkmqd/sections/minfm/student.svg" alt="힘내" />
+import{a as n}from"./index-D-1-ZD-T.js";const o={},v=`<img src="/assets/courses/qkmqd/sections/minfm/student.svg" alt="힘내" />
 <br />
 <div>본 강의를 학습하기 위해서 다음과 같은 사전 지식이 필요합니다.</div>
 <br />

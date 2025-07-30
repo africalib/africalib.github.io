@@ -1,3 +1,3 @@
-import{c as r,o,b as e,F as d}from"./index-D8Rv2mXa.js";const c={},i=`<img src="/assets/courses/qkmqd/sections/dbdtd/install.svg" alt="구글 크롬 설치" />
+import{c as r,o,b as e,F as d}from"./index-D-1-ZD-T.js";const c={},i=`<img src="/assets/courses/qkmqd/sections/dbdtd/install.svg" alt="구글 크롬 설치" />
 <br />`,m=`<img src="/assets/courses/qkmqd/sections/dbdtd/install.svg" alt="구글 크롬 설치" />\r
 <br />`;function n(t,s){return o(),r(d,null,[s[0]||(s[0]=e("img",{src:"/assets/courses/qkmqd/sections/dbdtd/install.svg",alt:"구글 크롬 설치"},null,-1)),s[1]||(s[1]=e("br",null,null,-1))],64)}const l={render:n};l.__hmrId="C:/J/repositories/africalib/src/data/courses/qkmqd/sections/dbdtd.md";const u=t=>({components:t,render:n});export{l as VueComponent,u as VueComponentWith,c as attributes,i as html,m as markdown};

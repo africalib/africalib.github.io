@@ -1,4 +1,4 @@
-import{c as t,o,b as n,e as a,F as s}from"./index-D8Rv2mXa.js";const d={},u=`<img src="/assets/courses/qkmqd/sections/atuoj/hello.svg" alt="인사" />
+import{c as t,o,b as n,e as a,F as s}from"./index-D-1-ZD-T.js";const d={},u=`<img src="/assets/courses/qkmqd/sections/atuoj/hello.svg" alt="인사" />
 <br />
 <div><b>우분투: 네가 있어 내가 있다.</b></div>
 <div>
