@@ -10,8 +10,6 @@
     --color-yellow: #ffe500;
     --color-yellowgreen: #2ddf7d;
     --color-tag: #edf2fa;
-    --px-radius: var(--px6);
-    --shadow: var(--px4) var(--px4) var(--px10) rgba(33, 37, 41, 0.03);
 
     --px-700: -43.7500rem;
     --px-699: -43.6875rem;
@@ -1414,4 +1412,8 @@
     --px698: 43.6250rem;
     --px699: 43.6875rem;
     --px700: 43.7500rem;
+
+    --px-radius: var(--px6);
+
+    --shadow: var(--px4) var(--px4) var(--px10) rgba(33, 37, 41, 0.03);
 }
