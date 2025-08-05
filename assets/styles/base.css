@@ -32,6 +32,10 @@ img {
     height: 100%;
 }
 
+[data-bs-toggle] {
+    cursor: pointer;
+}
+
 .w100px {
     width: 100px;
 }
