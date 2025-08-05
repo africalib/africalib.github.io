@@ -1,4 +1,4 @@
-import{a as i}from"./index-C4toX4Vu.js";const o={},a=`<div>내 컴퓨터에 있는 사진 파일을 보려면 어떻게 해야 할까요? 다음과 같이 하면 될 것입니다.</div>
+import{a as i}from"./index-y9xwffIy.js";const o={},a=`<div>내 컴퓨터에 있는 사진 파일을 보려면 어떻게 해야 할까요? 다음과 같이 하면 될 것입니다.</div>
 <br />
 <figure>
     <img src="/assets/courses/qkmqd/koadr/mrmob/steps1.svg" alt="내 컴퓨터에 있는 사진 파일을 보는 방법" class="w-100" />
