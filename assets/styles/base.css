@@ -40,6 +40,10 @@ img {
     height: 400px;
 }
 
+.mh400px {
+    max-height: 400px;
+}
+
 @media(max-width: 1399px) {
     .container {
         max-width: 940px;
