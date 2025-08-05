@@ -1,4 +1,4 @@
-import{c as t,o,b as n,e as a,F as s}from"./index-y9xwffIy.js";const d={},u=`<img src="/assets/courses/qkmqd/dgjni/atuoj/hello.svg" alt="인사" class="mh400px" />
+import{c as t,o,b as n,e as a,F as s}from"./index-Ca417a_8.js";const d={},u=`<img src="/assets/courses/qkmqd/dgjni/atuoj/hello.svg" alt="인사" class="mh400px" />
 <br />
 <div>
     안녕하세요? 언젠가 아프리카에 도서관을 짓고 싶은 개발자 최진입니다.
