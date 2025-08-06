@@ -34,6 +34,11 @@ img {
 
 [data-bs-toggle] {
     cursor: pointer;
+    font-size: var(--px15);
+}
+
+.popover-header {
+    display: none;
 }
 
 .w100px {
