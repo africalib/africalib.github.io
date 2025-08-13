@@ -1,4 +1,4 @@
-import{c as i,o as e,b as r,F as o}from"./index-Wba7TJEH.js";const d={},u=`<div>
+import{c as e,o as t,b as r,F as l}from"./index-BClzqXXR.js";const d={},g=`<div>
     이탈리아에 있는 피사의 사탑은 세계에서 가장 유명한 건축물 중 하나입니다.
     이 탑은 1173년도에 짓기 시작했는데 중간에 문제가 생겼습니다. 시공 중 탑이 한쪽으로 기울기 시작한 것인데요,
     이러한 문제가 발생한 것은 탑의 높이에 비해 기초 공사가 너무 부실했기 때문이었습니다. 결국 공사는 중단됐고요, 오랜 시간 후에
@@ -6,7 +6,7 @@ import{c as i,o as e,b as r,F as o}from"./index-Wba7TJEH.js";const d={},u=`<div>
     물론 피사의 사탑은 기울어진 모습 때문에 유명해지긴 했지만 이 사건을 통해 사람들은 기초 공사가 얼마나 중요한지를 깨닫게 됐습니다.
 </div>
 <br />
-<figure>
+<figure class="slide">
     <img src="/assets/courses/qkmqd/koadr/edcey/pisa.svg" alt="피사의 사탑의 건축 과정" class="w-100" />
     <figcaption>
         <span>피사의 사탑의 건축 과정</span>
@@ -19,7 +19,7 @@ import{c as i,o as e,b as r,F as o}from"./index-Wba7TJEH.js";const d={},u=`<div>
     애플리케이션을 개발할 때도 개발과 관련된 기초 지식이 반드시 필요합니다. 기초 지식이 잘 준비돼 있어
     야 더 안전하고 성능이 좋은 애플리케이션을 만들 수 있습니다. 이번 장에서는 애플리케이션 개발에 필요
     한 프론트엔드 기초 지식을 알아보겠습니다.
-</div>`,g=`<div>\r
+</div>`,u=`<div>\r
     이탈리아에 있는 피사의 사탑은 세계에서 가장 유명한 건축물 중 하나입니다.\r
     이 탑은 1173년도에 짓기 시작했는데 중간에 문제가 생겼습니다. 시공 중 탑이 한쪽으로 기울기 시작한 것인데요,\r
     이러한 문제가 발생한 것은 탑의 높이에 비해 기초 공사가 너무 부실했기 때문이었습니다. 결국 공사는 중단됐고요, 오랜 시간 후에\r
@@ -27,7 +27,7 @@ import{c as i,o as e,b as r,F as o}from"./index-Wba7TJEH.js";const d={},u=`<div>
     물론 피사의 사탑은 기울어진 모습 때문에 유명해지긴 했지만 이 사건을 통해 사람들은 기초 공사가 얼마나 중요한지를 깨닫게 됐습니다.\r
 </div>\r
 <br />\r
-<figure>\r
+<figure class="slide">\r
     <img src="/assets/courses/qkmqd/koadr/edcey/pisa.svg" alt="피사의 사탑의 건축 과정" class="w-100" />\r
     <figcaption>\r
         <span>피사의 사탑의 건축 과정</span>\r
@@ -40,4 +40,4 @@ import{c as i,o as e,b as r,F as o}from"./index-Wba7TJEH.js";const d={},u=`<div>
     애플리케이션을 개발할 때도 개발과 관련된 기초 지식이 반드시 필요합니다. 기초 지식이 잘 준비돼 있어\r
     야 더 안전하고 성능이 좋은 애플리케이션을 만들 수 있습니다. 이번 장에서는 애플리케이션 개발에 필요\r
     한 프론트엔드 기초 지식을 알아보겠습니다.\r
-</div>`;function t(s,n){return e(),i(o,null,[n[0]||(n[0]=r("div",null," 이탈리아에 있는 피사의 사탑은 세계에서 가장 유명한 건축물 중 하나입니다. 이 탑은 1173년도에 짓기 시작했는데 중간에 문제가 생겼습니다. 시공 중 탑이 한쪽으로 기울기 시작한 것인데요, 이러한 문제가 발생한 것은 탑의 높이에 비해 기초 공사가 너무 부실했기 때문이었습니다. 결국 공사는 중단됐고요, 오랜 시간 후에 일부 보수 공사를 거쳐 한쪽이 기울어진 채로 1372년도에 완공됐습니다. 한 개의 탑이 약 200년 동안이나 지어진 것입니다. 물론 피사의 사탑은 기울어진 모습 때문에 유명해지긴 했지만 이 사건을 통해 사람들은 기초 공사가 얼마나 중요한지를 깨닫게 됐습니다. ",-1)),n[1]||(n[1]=r("br",null,null,-1)),n[2]||(n[2]=r("figure",null,[r("img",{src:"/assets/courses/qkmqd/koadr/edcey/pisa.svg",alt:"피사의 사탑의 건축 과정",class:"w-100"}),r("figcaption",null,[r("span",null,"피사의 사탑의 건축 과정"),r("a",{"data-bs-toggle":"popover",title:"출처"},"[1]")])],-1)),n[3]||(n[3]=r("img",null,null,-1)),n[4]||(n[4]=r("br",null,null,-1)),n[5]||(n[5]=r("div",null," 애플리케이션을 개발할 때도 개발과 관련된 기초 지식이 반드시 필요합니다. 기초 지식이 잘 준비돼 있어 야 더 안전하고 성능이 좋은 애플리케이션을 만들 수 있습니다. 이번 장에서는 애플리케이션 개발에 필요 한 프론트엔드 기초 지식을 알아보겠습니다. ",-1))],64)}const l={render:t};l.__hmrId="C:/J/repositories/africalib/src/data/courses/qkmqd/koadr/edcey.md";const p=s=>({components:s,render:t});export{l as VueComponent,p as VueComponentWith,d as attributes,u as html,g as markdown};
+</div>`;function i(s,n){return t(),e(l,null,[n[0]||(n[0]=r("div",null," 이탈리아에 있는 피사의 사탑은 세계에서 가장 유명한 건축물 중 하나입니다. 이 탑은 1173년도에 짓기 시작했는데 중간에 문제가 생겼습니다. 시공 중 탑이 한쪽으로 기울기 시작한 것인데요, 이러한 문제가 발생한 것은 탑의 높이에 비해 기초 공사가 너무 부실했기 때문이었습니다. 결국 공사는 중단됐고요, 오랜 시간 후에 일부 보수 공사를 거쳐 한쪽이 기울어진 채로 1372년도에 완공됐습니다. 한 개의 탑이 약 200년 동안이나 지어진 것입니다. 물론 피사의 사탑은 기울어진 모습 때문에 유명해지긴 했지만 이 사건을 통해 사람들은 기초 공사가 얼마나 중요한지를 깨닫게 됐습니다. ",-1)),n[1]||(n[1]=r("br",null,null,-1)),n[2]||(n[2]=r("figure",{class:"slide"},[r("img",{src:"/assets/courses/qkmqd/koadr/edcey/pisa.svg",alt:"피사의 사탑의 건축 과정",class:"w-100"}),r("figcaption",null,[r("span",null,"피사의 사탑의 건축 과정"),r("a",{"data-bs-toggle":"popover",title:"출처"},"[1]")])],-1)),n[3]||(n[3]=r("img",null,null,-1)),n[4]||(n[4]=r("br",null,null,-1)),n[5]||(n[5]=r("div",null," 애플리케이션을 개발할 때도 개발과 관련된 기초 지식이 반드시 필요합니다. 기초 지식이 잘 준비돼 있어 야 더 안전하고 성능이 좋은 애플리케이션을 만들 수 있습니다. 이번 장에서는 애플리케이션 개발에 필요 한 프론트엔드 기초 지식을 알아보겠습니다. ",-1))],64)}const a={render:i};a.__hmrId="C:/J/repositories/africalib/src/data/courses/qkmqd/koadr/edcey.md";const p=s=>({components:s,render:i});export{a as VueComponent,p as VueComponentWith,d as attributes,g as html,u as markdown};

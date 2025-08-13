@@ -22,6 +22,10 @@ img {
     max-width: 100%;
 }
 
+.lined {
+    border: var(--px1) solid var(--color-border);
+}
+
 .img {
     display: inline-block;
     background-size: cover;
@@ -30,6 +34,10 @@ img {
     background-position: center;
     width: 100%;
     height: 100%;
+}
+
+.no-overflow {
+    overflow: hidden !important;
 }
 
 [data-bs-toggle] {
@@ -41,16 +49,28 @@ img {
     display: none;
 }
 
-.w100px {
+.w-100px {
     width: 100px;
 }
 
-.h400px {
+.h-400px {
     height: 400px;
 }
 
-.mh400px {
+.mh-200px {
+    max-height: 200px;
+}
+
+.mh-400px {
     max-height: 400px;
+}
+
+.mh-500px {
+    max-height: 500px;
+}
+
+.fs-30px {
+    font-size: var(--px30);
 }
 
 @media(max-width: 1399px) {
