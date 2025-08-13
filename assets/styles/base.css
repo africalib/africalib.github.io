@@ -18,6 +18,15 @@ a {
     line-break: anywhere;
 }
 
+a[href]:not(.btn) {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+a[href]:not(.btn):hover {
+    text-decoration: underline;
+}
+
 img {
     max-width: 100%;
 }
@@ -51,6 +60,10 @@ img {
 
 .w-100px {
     width: 100px;
+}
+
+.w-200px {
+    width: 200px;
 }
 
 .h-400px {
