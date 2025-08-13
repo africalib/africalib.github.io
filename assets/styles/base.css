@@ -85,6 +85,12 @@ img {
     }
 }
 
+@media(max-width: 575.98px) {
+    .hide-sm {
+        display: none !important;
+    }
+}
+
 @media(max-width: 350px) {
     html {
         font-size: 14px;

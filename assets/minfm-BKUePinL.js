@@ -1,4 +1,4 @@
-import{a as n}from"./index-BClzqXXR.js";const o={},e=`<img src="/assets/courses/qkmqd/dgjni/minfm/student.svg" alt="힘내" class="slide mh-400px" />
+import{a as n}from"./index-CLoClIv6.js";const o={},e=`<img src="/assets/courses/qkmqd/dgjni/minfm/student.svg" alt="힘내" class="slide mh-400px" />
 <br />
 <div class="mb-3">본 강의를 학습하기 위해서 다음과 같은 사전 지식이 필요합니다.</div>
 <table class="slide">

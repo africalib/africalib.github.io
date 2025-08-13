@@ -1,4 +1,4 @@
-import{a as i}from"./index-BClzqXXR.js";const t={},o=`<div>
+import{a as i}from"./index-CLoClIv6.js";const t={},o=`<div>
     마이크로소프트가 윈도우 운영체제에 인터넷 익스플로러(Internet Explorer)라는 웹 브라우저를 기본으로 탑재하기 시작했는데요,
     그러면서 익스플로러의 점유율이 상승하기 시작했습니다. 전 세계 사용률의 95%를 차지할 정도로 엄청났죠.
     이 때문에 당시 웹 개발자들은 대부분 익스플로러에만 맞춰서 개발해도 큰 문제가 없었습니다.

@@ -1,4 +1,4 @@
-import{a as r}from"./index-BClzqXXR.js";const t={},c=`<img src="/assets/courses/qkmqd/dgjni/atuoj/hello.svg" alt="인사" class="slide mh-400px" />
+import{a as r}from"./index-CLoClIv6.js";const t={},c=`<img src="/assets/courses/qkmqd/dgjni/atuoj/hello.svg" alt="인사" class="slide mh-400px" />
 <br />
 <div>
     안녕하세요? 개발자 최진입니다. 이렇게 강의를 시청해주셔서 감사합니다.
