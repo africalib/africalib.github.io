@@ -57,6 +57,14 @@ img {
     height: 400px;
 }
 
+.mh-100px {
+    max-height: 100px;
+}
+
+.mh-150px {
+    max-height: 150px;
+}
+
 .mh-200px {
     max-height: 200px;
 }
