@@ -1,1 +1,0 @@
-import{c as i}from"./courses-CqBYoUHk.js";function d(){const o=t=>i.find(e=>e.id===t),c=(t,e)=>{const n=o(t);return n?n.chapters.find(r=>r.id===e):null};return{getCourse:o,getChapter:c,getSection:(t,e,n)=>{const r=c(t,e);return r?r.sections.find(s=>s.id===n):null}}}export{d as u};
