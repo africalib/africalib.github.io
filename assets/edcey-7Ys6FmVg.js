@@ -1,4 +1,4 @@
-import{a as e}from"./index-DzQTO5n7.js";const t={},p=`<figure class="slide-item">
+import{a as e}from"./index-Bt7aCXnM.js";const t={},p=`<figure class="slide-item">
     <img src="/assets/courses/qkmqd/koadr/edcey/photo.pisa.png" alt="피사의 사탑" class="mh-500px" />
     <figcaption>
         <span>피사의 사탑</span>
