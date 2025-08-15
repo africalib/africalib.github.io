@@ -1,4 +1,4 @@
-import{a as r}from"./index-Bt7aCXnM.js";const o={},i=`<figure class="slide-item">
+import{a as r}from"./index-Ch9UMVpR.js";const o={},i=`<figure class="slide-item">
     <img src="/assets/courses/qkmqd/hufwn/mxakn/install.node.svg" alt="Node.js 설치" class="mh-400px" />
     <figcaption>
         <span>Node.js 설치</span>
