@@ -1,0 +1,1 @@
+import{P as s}from"./Posts-VD3lR15G.js";import{f as e,c as o,b as t,d as a,o as c}from"./index-BTcSdAml.js";const n={class:"posts"},r={class:"container"},m=e({__name:"Posts",setup(_){return(d,p)=>(c(),o("div",n,[t("div",r,[a(s,{postId:"null"})])]))}});export{m as default};

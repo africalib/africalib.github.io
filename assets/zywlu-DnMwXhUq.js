@@ -1,4 +1,4 @@
-import{a}from"./index-Ch9UMVpR.js";const e={},t=`<figure class="slide-item">
+import{a}from"./index-BTcSdAml.js";const e={},t=`<figure class="slide-item">
     <img src="/assets/courses/qkmqd/hufwn/zywlu/install.vscode.svg" alt="Visual Studio Code 설치" class="mh-400px" />
     <figcaption>
         <span>Visual Studio Code 설치</span>
