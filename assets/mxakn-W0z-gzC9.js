@@ -1,4 +1,4 @@
-import{a as e}from"./index-q_JKYZZK.js";const o={},i=`<figure class="slide-item">
+import{a as e}from"./index-C1346o9X.js";const o={},i=`<figure class="slide-item">
     <img src="/assets/courses/qkmqd/hufwn/mxakn/install.node.svg" alt="Node.js 설치" class="mh-400px" />
     <figcaption>
         <span>윈도우에</span>
