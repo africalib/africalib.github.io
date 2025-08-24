@@ -1,4 +1,4 @@
-import{a as i}from"./index-DzLnXc5Z.js";const t={},d=`<figure class="slide-item">
+import{a as i}from"./index-C1uT8i2x.js";const t={},d=`<figure class="slide-item">
     <img src="/assets/courses/qkmqd/hufwn/zywlu/install.vscode.svg" alt="Visual Studio Code 설치" class="mh-400px" />
     <figcaption>
         <span>macOS에</span>
