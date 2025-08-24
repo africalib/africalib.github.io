@@ -1,4 +1,4 @@
-import{a}from"./index-DjU2mrwv.js";const i={},o=`<figure class="slide-item">
+import{a}from"./index-q_JKYZZK.js";const i={},o=`<figure class="slide-item">
     <img src="/assets/courses/qkmqd/hufwn/tzbjy/install.chrome.svg" alt="구글 크롬 설치" class="mh-400px" />
     <figcaption>
         <span>macOS에</span>
