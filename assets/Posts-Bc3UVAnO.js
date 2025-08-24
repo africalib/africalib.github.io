@@ -1,0 +1,1 @@
+import{P as e}from"./Posts-CFFlI6UO.js";import{d as s,c as o,b as t,e as a,o as c}from"./index-C066Cbt9.js";const n={class:"posts"},r={class:"container"},m=s({__name:"Posts",setup(_){return(d,i)=>(c(),o("div",n,[t("div",r,[a(e,{id:null})])]))}});export{m as default};
