@@ -1,4 +1,4 @@
-import{a as i}from"./index-C066Cbt9.js";const t={},c=`<figure class="slide-item">
+import{a as i}from"./index-BH3qRXEG.js";const t={},c=`<figure class="slide-item">
     <img src="/assets/courses/qkmqd/hufwn/cuegf/ie.svg" class="mh-200" alt="인터넷 익스플로러" />
     <figcaption>
         <span>인터넷 익스플로러</span>

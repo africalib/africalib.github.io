@@ -1,4 +1,4 @@
-import{a as r}from"./index-C066Cbt9.js";const e={},a=`<figure class="slide-item">
+import{a as r}from"./index-BH3qRXEG.js";const e={},a=`<figure class="slide-item">
     <img src="/assets/courses/qkmqd/dgjni/vqlmv/cheer.svg" alt="힘내" class="mh-400px" />
     <figcaption>
         <b>학습 내용</b><span>과 참고자료</span>
