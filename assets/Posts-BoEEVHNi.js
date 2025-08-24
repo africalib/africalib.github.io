@@ -1,1 +1,0 @@
-import{P as e}from"./Posts-J-SfB5g1.js";import{d as s,c as o,b as t,e as a,o as c}from"./index-CUVekdyA.js";import"./commonLib-DZoi0k1s.js";const n={class:"posts"},r={class:"container"},f=s({__name:"Posts",setup(_){return(i,d)=>(c(),o("div",n,[t("div",r,[a(e,{id:null})])]))}});export{f as default};

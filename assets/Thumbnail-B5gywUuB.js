@@ -1,0 +1,1 @@
+import{d as s,c as a,b as o,o as c,_ as n}from"./index-Cd_lY94B.js";const l={class:"thumbnail"},r=["src","alt"],_=s({__name:"Thumbnail",props:{url:{},title:{}},setup(e){const t=e;return(i,p)=>(c(),a("div",l,[o("img",{src:t.url||"",alt:`${t.title}`,loading:"lazy"},null,8,r)]))}}),m=n(_,[["__scopeId","data-v-ff56d859"]]);export{m as T};
