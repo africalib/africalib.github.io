@@ -1,4 +1,4 @@
-import{a as t}from"./index-D9KR6Vh5.js";const p={},o=`<figure class="slide-item">
+import{a as t}from"./index-gO4LDr-8.js";const p={},o=`<figure class="slide-item">
     <img src="/assets/posts/ztmmg/coding.svg" alt="코딩하는 소녀" class="mh-400px" />
     <figcaption>
         <span>자바스크립트의 </span>
