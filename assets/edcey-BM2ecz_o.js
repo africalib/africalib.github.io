@@ -1,4 +1,4 @@
-import{a as e}from"./index-nMhq4-HH.js";const p={},o=`<figure class="slide-item">
+import{a as e}from"./index-B7KP6yNo.js";const p={},o=`<figure class="slide-item">
     <img src="/assets/courses/qkmqd/koadr/edcey/photo.pisa.png" alt="피사의 사탑" class="mh-500px" />
     <figcaption>
         <span>이탈리아에 있는 </span>
