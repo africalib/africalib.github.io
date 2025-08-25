@@ -1,1 +1,0 @@
-import{d as c,c as a,b as e,t,o as _,_ as n}from"./index-d08nFrCo.js";const d={class:"above"},i={class:"title"},r={class:"desc"},p=c({__name:"Above",props:{title:{},desc:{}},setup(o){const s=o;return(l,v)=>(_(),a("div",d,[e("div",i,t(s.title),1),e("div",r,t(s.desc),1)]))}}),f=n(p,[["__scopeId","data-v-a43f4591"]]);export{f as A};
