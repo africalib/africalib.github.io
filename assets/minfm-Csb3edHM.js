@@ -1,4 +1,4 @@
-import{a as s}from"./index-C21Ap1jn.js";const a={},r=`<figure class="slide-item">
+import{a as s}from"./index-DB5tbCCY.js";const a={},r=`<figure class="slide-item">
     <img src="/assets/courses/qkmqd/dgjni/minfm/student.svg" alt="학생" class="mh-400px" />
     <figcaption>
         <span>미리 알아야 할</span>

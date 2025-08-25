@@ -1,4 +1,4 @@
-import{a as i}from"./index-C21Ap1jn.js";const p={},o=`<figure class="slide-item">
+import{a as i}from"./index-DB5tbCCY.js";const p={},o=`<figure class="slide-item">
     <img src="/assets/courses/qkmqd/dgjni/atuoj/hello.svg" alt="인사" class="mh-400px" />
     <figcaption>
         <span>강사</span>

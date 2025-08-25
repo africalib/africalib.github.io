@@ -1,4 +1,4 @@
-import{a}from"./index-C21Ap1jn.js";const i={},o=`<figure class="slide-item">
+import{a}from"./index-DB5tbCCY.js";const i={},o=`<figure class="slide-item">
     <img src="/assets/courses/qkmqd/hufwn/dbdtd/install.chrome.svg" alt="구글 크롬 설치" class="mh-400px" />
     <figcaption>
         <span>윈도우에</span>
