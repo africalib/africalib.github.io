@@ -1,0 +1,1 @@
+const o={},c="",s="";function e(t,r){return null}const n={render:e};n.__hmrId="C:/J/repositories/africalib/src/data/posts/gprfx.md";const a=t=>({components:t,render:e});export{n as VueComponent,a as VueComponentWith,o as attributes,c as html,s as markdown};
