@@ -1,4 +1,4 @@
-import{a}from"./index-Du8c4cAU.js";const i={},d=`<figure class="slide-item">
+import{a}from"./index-5AzO19RQ.js";const i={},d=`<figure class="slide-item">
     <img src="/assets/courses/qkmqd/hufwn/aynym/install.node.svg" alt="Node.js 설치" class="mh-400px" />
     <figcaption>
         <span>macOS에</span>
