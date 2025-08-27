@@ -49,6 +49,10 @@ img {
     overflow: hidden !important;
 }
 
+.pre-wrap {
+    white-space: pre-wrap;
+}
+
 [data-bs-toggle] {
     cursor: pointer;
     font-size: var(--px15);
