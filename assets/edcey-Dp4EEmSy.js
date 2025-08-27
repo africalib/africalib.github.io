@@ -1,4 +1,4 @@
-import{a as e}from"./index-B3HcCPYI.js";const r={},p=`<figure class="slide-item">
+import{a as e}from"./index-D0eNWVzH.js";const r={},p=`<figure class="slide-item">
     <img src="/assets/courses/qkmqd/koadr/edcey/pisa.png" alt="피사의 사탑의 건축 과정" class="w-100" />
     <figcaption>
         <b>피사의 사탑</b><span>의 건축 과정</span>

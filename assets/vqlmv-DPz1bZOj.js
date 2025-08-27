@@ -1,4 +1,4 @@
-import{a as i}from"./index-B3HcCPYI.js";const r={},l=`<div class="slide-text mb-2">프론트엔드 학습 내용</div>
+import{a as i}from"./index-D0eNWVzH.js";const r={},l=`<div class="slide-text mb-2">프론트엔드 학습 내용</div>
 <div class="slide-item">
     <table>
         <tbody>

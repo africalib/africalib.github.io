@@ -1,4 +1,4 @@
-import{a as n}from"./index-B3HcCPYI.js";const r={},e=`<div class="slide-text mb-2">프론트엔드 사전 지식</div>
+import{a as n}from"./index-D0eNWVzH.js";const r={},e=`<div class="slide-text mb-2">프론트엔드 사전 지식</div>
 <div class="slide-item">
     <table>
         <tbody>
