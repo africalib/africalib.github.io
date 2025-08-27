@@ -1,4 +1,4 @@
-import{c as i,o as l,b as n,F as a}from"./index-Cq8pZ_KL.js";const p={},m=`<figure class="slide-item">
+import{c as i,o as l,b as n,F as a}from"./index-B3HcCPYI.js";const p={},m=`<figure class="slide-item">
     <img src="/assets/posts/ztmmg/primitive.svg" alt="게시판 작업하는 소녀" class="mh-400px" />
     <figcaption>
         <b>원시형</b><span>이란?</span>

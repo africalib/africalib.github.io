@@ -1,4 +1,4 @@
-import{c as s,o as t,b as n,h as e}from"./index-Cq8pZ_KL.js";const b={},i=`<div class="slide-text">
+import{c as s,o as t,b as n,h as e}from"./index-B3HcCPYI.js";const b={},i=`<div class="slide-text">
     <div class="mb-3">
         <b>다음 순서에 따라 진행하시면 됩니다.</b>
     </div>

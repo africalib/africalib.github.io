@@ -1,4 +1,4 @@
-import{a as e}from"./index-Cq8pZ_KL.js";const o={},r=`<figure class="slide-item">
+import{a as e}from"./index-B3HcCPYI.js";const o={},r=`<figure class="slide-item">
     <img src="/assets/courses/qkmqd/dgjni/atuoj/youtube.png" alt="유튜브 채널" class="mh-400px lined" />
     <figcaption>
         <b>유튜브</b>
