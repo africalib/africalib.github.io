@@ -9,7 +9,6 @@ html {
 }
 
 body {
-    background-color: var(--color-background);
     font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
     line-height: 1.6;
 }
@@ -25,6 +24,10 @@ a[href]:not(.btn) {
 
 a[href]:not(.btn):hover {
     text-decoration: underline;
+}
+
+p {
+    margin-bottom: var(--px16);
 }
 
 img {
@@ -60,11 +63,15 @@ img {
 
 .popover {
     border-radius: var(--px6);
+    border-color: var(--color-border);
 }
 
 .popover .popover-header {
     background-color: var(--color-background);
     font-size: var(--px14);
+    padding-top: var(--px13);
+    padding-bottom: var(--px11);
+    border-bottom-color: var(--color-border);
 }
 
 .popover .popover-arrow {
