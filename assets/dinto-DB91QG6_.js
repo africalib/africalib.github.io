@@ -1,1 +1,0 @@
-const r={},c="",s="";function n(t,o){return null}const e={render:n};e.__hmrId="C:/J/repositories/africalib/src/data/posts/dinto.md";const d=t=>({components:t,render:n});export{e as VueComponent,d as VueComponentWith,r as attributes,c as html,s as markdown};
