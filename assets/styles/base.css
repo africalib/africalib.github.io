@@ -58,7 +58,16 @@ img {
     font-size: var(--px15);
 }
 
-.popover-header {
+.popover {
+    border-radius: var(--px6);
+}
+
+.popover .popover-header {
+    background-color: var(--color-background);
+    font-size: var(--px14);
+}
+
+.popover .popover-arrow {
     display: none;
 }
 
