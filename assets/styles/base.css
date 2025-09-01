@@ -17,13 +17,8 @@ a {
     line-break: anywhere;
 }
 
-a[href]:not(.btn) {
+a[href] {
     color: inherit;
-    text-decoration: inherit;
-}
-
-a[href]:not(.btn):hover {
-    text-decoration: underline;
 }
 
 p {
