@@ -109,16 +109,8 @@ img {
     font-size: var(--px30);
 }
 
-@media(max-width: 1399px) {
-    .container {
-        max-width: 940px;
-    }
-}
-
-@media(max-width: 991px) {
-    .container {
-        max-width: 100%;
-    }
+.container {
+    max-width: 991px;
 }
 
 @media(max-width: 575.98px) {
