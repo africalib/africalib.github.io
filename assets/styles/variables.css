@@ -1,7 +1,6 @@
 :root {
     --color-background: #f6f9fc;
     --color-border: #f1f1f1;
-    --color-border-hover: #e7e7e7;
     --color-border-frame: #1e1e1e;
     --color-primary: #0e70ff;
     --color-default: #212529;
@@ -10,6 +9,7 @@
     --color-secondary: #6c757d;
     --color-yellow: #ffe500;
     --color-yellowgreen: #2ddf7d;
+    --color-gray: #e7e7e7;
     --color-tag: #edf2fa;
 
     --px-700: -43.7500rem;
