@@ -1,0 +1,1 @@
+import{d as c,c as a,e as s,t,o as _,_ as n}from"./index-CupUypXl.js";const d={class:"above"},i={class:"title"},r={class:"desc"},p=c({__name:"Above",props:{title:{},desc:{}},setup(o){const e=o;return(l,v)=>(_(),a("div",d,[s("div",i,t(e.title),1),s("div",r,t(e.desc),1)]))}}),b=n(p,[["__scopeId","data-v-ab6b1e2f"]]);export{b as A};
