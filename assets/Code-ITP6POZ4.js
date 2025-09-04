@@ -1,4 +1,4 @@
-import{d as ec,G as tc,u as nc,h as ac,c as rc,e as ic,t as oc,g as sc,o as lc,_ as cc}from"./index-B86f71VX.js";const _c=[{id:"pbdxp",content:`<button onclick="read()">조회</button>
+import{d as ec,G as tc,u as nc,h as ac,c as rc,e as ic,t as oc,g as sc,o as lc,_ as cc}from"./index-CpYqn24L.js";const _c=[{id:"pbdxp",content:`<button onclick="read()">조회</button>
 <div id="post">조회 결과 출력</div>
 
 <script>
