@@ -1,1 +1,0 @@
-import{d as c,c as a,e as s,t,o as _,_ as n}from"./index-BDq2SMc7.js";const d={class:"above"},i={class:"title"},r={class:"desc"},p=c({__name:"Above",props:{title:{},desc:{}},setup(o){const e=o;return(l,v)=>(_(),a("div",d,[s("div",i,t(e.title),1),s("div",r,t(e.desc),1)]))}}),f=n(p,[["__scopeId","data-v-595a472f"]]);export{f as A};
