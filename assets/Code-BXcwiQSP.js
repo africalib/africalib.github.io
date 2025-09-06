@@ -1,4 +1,4 @@
-import{d as ac,G as rc,u as ic,h as oc,i as sc,c as Ci,b as lc,k as cc,g as It,n as _c,t as dc,o as Ni,_ as uc}from"./index-XTOiYpN_.js";const pc=`
+import{d as ac,H as rc,h as ic,i as oc,j as sc,c as Ci,b as lc,l as cc,u as It,n as _c,t as dc,o as Ni,_ as uc}from"./index-DIUVC7nj.js";const pc=`
 <button onclick="read()">조회</button>
 <div id="post">조회 결과 출력</div>
 
