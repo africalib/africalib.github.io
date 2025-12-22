@@ -1,4 +1,4 @@
-import{d as ac,G as rc,h as ic,i as oc,j as sc,c as Ci,b as lc,l as cc,u as It,n as _c,t as dc,o as Ni,_ as uc}from"./index-C0NilABL.js";const pc=`
+import{d as ac,G as rc,h as ic,i as oc,j as sc,c as Ci,b as lc,l as cc,u as It,n as _c,t as dc,o as Ni,_ as uc}from"./index-D8Jr-H6P.js";const pc=`
 @Entity
 @Table(name = "documents")
 public class DocumentEntity {
