@@ -2,10 +2,39 @@
     다음과 같이 게시글 서비스 테스트 클래스를 생성합니다.
 </div>
 <figure class="slide-item">
-    <iframe src="/codes/siovo" class="w-100 lined"></iframe>
+    <pre class="lined w-100">
+        <code class="language-java">
+@ExtendWith(MockitoExtension.class)
+class DocumentServiceTest {
+
+    @InjectMocks
+    private DocumentService documentService;
+
+    @Mock
+    private DocumentRepository documentRepository;
+
+    @Test
+    @DipsplayName("게시글 생성이 잘 되는지")
+    void create1() {
+        // given
+        DocumentCreateRequest request = new DocumentCreateRequest("제목", "내용", "작성자");
+        DocumentEntity savedEntity = DocumentEntity.create("제목", "내용", "작성자");
+
+        given(documentRepository.save(any(DocumentEntity.class))).willReturn(savedEntity);
+
+        // when
+        Long documentId = documentService.create(request);
+
+        // then
+        assertThat(documentId).isNotNull();
+        then(documentRepository).should(times(1)).save(any(DocumentEntity.class));
+    }
+}
+        </code>
+    </pre>
     <figcaption>
         <b>게시글</b>
-        <span>서비스</span>
+        <span>서비스 테스트 코드</span>
     </figcaption>
 </figure>
 <br>
@@ -14,13 +43,30 @@
     그러고 나서 다음과 같이 테스트를 통과하기 위한 최소 코드를 구현합니다.
 </div>
 <figure class="slide-item">
-    <iframe src="/codes/ubygz" class="w-100 lined"></iframe>
+    <pre class="w-100 lined">
+        <code class="language-java">
+@Service
+@RequiredArgsConstructor
+@Transactional
+public class DocumentService {
+
+    private final DocumentRepository documentRepository;
+
+    public Long create(DocumentCreateRequest request) {
+        DocumentEntity document =
+                DocumentEntity.create(
+                        request.getTitle(),
+                        request.getContent(),
+                        request.getAuthor()
+                );
+
+        return documentRepository.save(document).getId();
+    }
+}
+        </code>
+    </pre>
     <figcaption>
-        <b>JPA 설정</b>
+        <b>게시글 서비스</b>
     </figcaption>
 </figure>
 <br>
-<div class="slide-text" data-slide-text-group="2">
-    첫 번째 설정은 애플리케이션 시작 시 기존 테이블 삭제 후 새로 생성하도록 하는 설정입니다.
-    두 번째와 세 번째 설정은 실행되는 SQL 문을 콘솔에 출력하고 보기 좋게 포맷팅하는 설정입니다.
-</div>

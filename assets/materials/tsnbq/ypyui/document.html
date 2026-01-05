@@ -44,7 +44,19 @@
     다음과 같이 테스트 컨트롤러 코드를 작성하고요, 상단에 있는 디버그 버튼을 클릭하여 애플리케이션을 실행합니다.
 </div>
 <figure class="slide-item">
-    <iframe src="/codes/ekqaa" class="w-100 lined"></iframe>
+    <pre class="lined w-100">
+        <code class="language-java">
+@RestController
+@RequestMapping("/v1/api/tests")
+public class TestController {
+
+    @GetMapping("/connection")
+    public String connect() {
+        return "OK";
+    }
+}
+        </code>
+    </pre>
     <figcaption>
         <b>테스트</b>
         <span>컨트롤러</span>
@@ -55,7 +67,14 @@
     그런데, 아직 데이터베이스 관련 설정을 하지 않았기 때문에 실행이 되지 않습니다. 그래서 다음과 같이 application.properties 파일을 열고, 데이터베이스 관련 설정을 추가합니다.
 </div>
 <figure class="slide-item">
-    <iframe src="/codes/smada" class="w-100 lined"></iframe>
+    <pre class="lined w-100">
+        <code class="language-properties">
+spring.datasource.url=jdbc:mariadb://localhost:3300/board
+spring.datasource.username=board_user
+spring.datasource.password=board_password
+spring.datasource.driver-class-name=org.mariadb.jdbc.Driver
+        </code>
+    </pre>
     <figcaption>
         <b>DB 설정</b>
     </figcaption>

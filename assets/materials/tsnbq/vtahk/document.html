@@ -38,7 +38,31 @@
     다음으로 도커 컴포즈를 통해 마리아DB를 세팅하겠습니다. 다음은 도커 컴포즈 코드입니다.
 </div>
 <figure class="slide-item">
-    <iframe src="/codes/kczcg" class="w-100 lined"></iframe>
+    <pre class="lined w-100">
+        <code class="language-yaml">
+services:
+  mariadb_board:
+    image: mariadb:11.8.5
+    container_name: mariadb_board
+    ports:
+      - "3300:3306"
+    environment:
+      MARIADB_ROOT_PASSWORD: root_password
+      MARIADB_DATABASE: board
+      MARIADB_USER: board_user
+      MARIADB_PASSWORD: board_password
+      TZ: Asia/Seoul
+    volumes:
+      - mariadb-data:/var/lib/mysql
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+    restart: unless-stopped
+
+volumes:
+  mariadb-data:
+        </code>
+    </pre>
     <figcaption>
         <b>MaraiDB</b>
         <span>-</span>
