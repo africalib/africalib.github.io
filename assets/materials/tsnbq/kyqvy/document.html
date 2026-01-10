@@ -1,7 +1,7 @@
-<div class="slide-text" data-slide-text-group="1">
+<p data-prompt-num="1">
     다음과 같이 게시글 서비스 테스트 클래스를 생성합니다.
-</div>
-<figure class="slide-item">
+</p>
+<figure>
     <pre class="lined w-100">
         <code class="language-java">
 @ExtendWith(MockitoExtension.class)
@@ -33,16 +33,15 @@ class DocumentServiceTest {
         </code>
     </pre>
     <figcaption>
-        <b>게시글</b>
-        <span>서비스 테스트 코드</span>
+        <b>게시글 서비스 </b>
+        <span>테스트 코드</span>
     </figcaption>
 </figure>
-<br>
-<div class="slide-text" data-slide-text-group="2">
+<p data-prompt-num="2">
     그러고 나서 테스트를 실행합니다. 처음에는 당연히 실패합니다. 이것이 TDD의 RED 단계입니다.
     그러고 나서 다음과 같이 테스트를 통과하기 위한 최소 코드를 구현합니다.
-</div>
-<figure class="slide-item">
+</p>
+<figure>
     <pre class="w-100 lined">
         <code class="language-java">
 @Service
@@ -53,12 +52,11 @@ public class DocumentService {
     private final DocumentRepository documentRepository;
 
     public Long create(DocumentCreateRequest request) {
-        DocumentEntity document =
-                DocumentEntity.create(
-                        request.getTitle(),
-                        request.getContent(),
-                        request.getAuthor()
-                );
+        DocumentEntity document = DocumentEntity.builder()
+                            .title(request.getTitle())
+                            .content(request.getContent())
+                            .author(request.getAuthor())
+                            .build();
 
         return documentRepository.save(document).getId();
     }

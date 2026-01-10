@@ -1,9 +1,9 @@
-<div class="slide-text" data-slide-text-group="1">
+<p data-prompt-num="1">
     다음과 같이 게시글 엔티티 클래스를 생성합니다.
-</div>
-<figure class="slide-item">
+</p>
+<figure>
     <pre class="lined w-100">
-        <code class="language-java">
+        <code class="language-java" data-prompt-num="1">
 @Entity
 @Builder
 @AllArgsConstructor
@@ -33,37 +33,41 @@ public class DocumentEntity {
         </code>
     </pre>
     <figcaption>
-        <b>게시글</b>
-        <span>엔티티</span>
+        <b>게시글 엔티티</b>
     </figcaption>
 </figure>
-<br>
-<div class="slide-text" data-slide-text-group="2">
+<p data-prompt-num="1">
+    아이디 필드 @Id 어노테이션은 해당 필드가 테이블의 기본 키임을 나타냅니다.
+    그리고 @GeneratedValue 어노테이션은 기본 키 생성 전략을 지정합니다.
+    여기서는 IDENTITY 전략을 사용했는데, 이는 DB가 기본 키 값을 직접 만들어 주는 방식입니다.
+    단순한 자동 증가 방식이라고 생각하시면 됩니다.
+</p>
+<p data-prompt-num="2">
     그러고 나서 다음과 같이 설정 파일을 추가합니다.
-</div>
-<figure class="slide-item">
+</p>
+<figure>
     <pre class="lined w-100">
-        <code class="language-properties">
+        <code class="language-properties" data-prompt-num="2">
 spring.jpa.hibernate.ddl-auto=create
 spring.jpa.show-sql=true
 spring.jpa.properties.hibernate.format_sql=true
         </code>
     </pre>
     <figcaption>
-        <b>스프링 데이터 JPA 설정</b>
+        <b>스프링 데이터 JPA </b>
+        <span>설정</span>
     </figcaption>
 </figure>
-<br>
-<div class="slide-text" data-slide-text-group="2">
+<p data-prompt-num="2">
     첫 번째 설정은 애플리케이션 시작 시 테이블이 없다면 새로 생성하도록 하는 설정입니다.
     두 번째 설정은 SQL 쿼리를 콘솔에 출력하고, 세 번째 설정은 SQL 쿼리를 보기 좋게 포맷팅하는 설정입니다.
-</div>
-<div class="slide-text" data-slide-text-group="3">
+</p>
+<p data-prompt-num="3">
     다음으로 게시글 리포지터리 인터페이스를 생성합니다.
-</div>
-<figure class="slide-item">
+</p>
+<figure>
     <pre class="lined w-100">
-        <code class="language-java">
+        <code class="language-java" data-prompt-num="3">
 public interface DocumentRepository {
 }
         </code>
